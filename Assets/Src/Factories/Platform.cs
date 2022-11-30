@@ -2,31 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
-namespace Src
+namespace Src.Factories
 {
     [Serializable]
-    public class PlatformPoint
+    public class PlatformPlace
     {
         public Transform Transform;
         public bool IsOccupied;
+        public Product Product;
 
-        public PlatformPoint(Transform transform, bool isFree)
+        public PlatformPlace(Transform transform, Product product, bool isFree = true)
         {
             Transform = transform;
             IsOccupied = isFree;
-        }
-
-        public PlatformPoint(Transform transform)
-        {
-            Transform = transform;
-            IsOccupied = true;
         }
     }
     
     public class Platform : MonoBehaviour
     {
-        [SerializeField] private List<PlatformPoint> _points = new();
+        [SerializeField] private List<PlatformPlace> _places = new();
         private bool _isFull;
 
         public UnityEvent OnOutOfSpace;
@@ -34,7 +30,7 @@ namespace Src
 
         public void Spawn(Product product)
         {
-            PlatformPoint freePoint = _points.Find(point => !point.IsOccupied);
+            PlatformPlace freePoint = _places.Find(place => !place.IsOccupied);
 
             if (freePoint == null)
             {
@@ -42,10 +38,26 @@ namespace Src
                 Destroy(product);
                 return;
             }
-            
+
             product.transform.SetParent(freePoint.Transform);
             product.transform.localPosition = Vector3.zero;
+            freePoint.Product = product;
             freePoint.IsOccupied = true;
+        }
+
+        public Product GetProduct()
+        {
+            PlatformPlace place = _places.Find(place => place.IsOccupied);
+
+            if (place == null) return null;
+
+            Product product = place.Product;
+
+            place.Product = null;
+            place.IsOccupied = false;
+            OnFreeSpace.Invoke();
+
+            return product;
         }
     }
 }

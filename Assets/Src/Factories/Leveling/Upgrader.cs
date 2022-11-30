@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-namespace Src
+namespace Src.Factories.Leveling
 {
     public class Upgrader : MonoBehaviour
     {

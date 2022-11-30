@@ -1,7 +1,8 @@
 ﻿using System.Collections;
+using Src.Factories.Leveling;
 using UnityEngine;
 
-namespace Src
+namespace Src.Factories
 {
     public class Factory : MonoBehaviour
     {
