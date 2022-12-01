@@ -13,6 +13,7 @@ namespace Src.Factories
         [SerializeField] private Product _producableProduct;
 
         private float _productionTimeSpan;
+        private Coroutine _productionCoroutine;
 
         private void Start()
         {
@@ -21,13 +22,12 @@ namespace Src.Factories
             _platform.OnFreeSpace.AddListener(ContinueProduction);
             
             _productionTimeSpan = _defaultProductionTimeSpan;
-
-            StartCoroutine(LaunchProduction());
+            _productionCoroutine = StartCoroutine(LaunchProduction());
         }
 
         private void OnDisable()
         {
-            StopCoroutine(LaunchProduction());
+            StopCoroutine(_productionCoroutine);
         }
 
         private void ApplyUpgrade(int level)
@@ -37,28 +37,29 @@ namespace Src.Factories
 
         private IEnumerator LaunchProduction()
         {
-            yield return new WaitForSeconds(_productionTimeSpan);
-
-            Product newProduct = Instantiate(_producableProduct, transform);
+            while (true)
+            {
+                yield return new WaitForSeconds(_productionTimeSpan);
             
-            Produce(newProduct);
-
-            yield return LaunchProduction();
+                Produce();
+            }
         }
 
         private void StopProduction()
         {
-            StopCoroutine(LaunchProduction());
+            StopCoroutine(_productionCoroutine);
         }
 
         private void ContinueProduction()
         {
-            StartCoroutine(LaunchProduction());
+            _productionCoroutine = StartCoroutine(LaunchProduction());
         }
 
-        private void Produce(Product productInstance)
+        private void Produce()
         {
-            _platform.Spawn(productInstance);
+            Product newProduct = Instantiate(_producableProduct, transform);
+            
+            _platform.AddProduct(newProduct);
         }
     }
 }

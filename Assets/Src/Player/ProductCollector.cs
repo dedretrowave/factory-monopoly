@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Src.Factories;
+using Src.Factories.PlatformPoint;
 using UnityEngine;
 
 namespace Src.Player
@@ -15,11 +17,33 @@ namespace Src.Player
             if (_products.Count >= _maxProductsCarried
                 || !other.TryGetComponent(out Platform platform)) return;
 
+            switch (platform.Type)
+            {
+                case PlatformType.Factory:
+                    Take(platform);
+                    break;
+                case PlatformType.Shop:
+                    Give(platform);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
+
+        private void Take(Platform platform)
+        {
             Product product = platform.GetProduct();
 
             if (product == null) return;
             
             Collect(product);
+        }
+
+        private void Give(Platform platform)
+        {
+            Product product = _products.Pop();
+            
+            platform.AddProduct(product);
         }
 
         private void Collect(Product product)
