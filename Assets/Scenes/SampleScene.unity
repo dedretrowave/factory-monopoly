@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 356552894}
   - component: {fileID: 356552895}
   m_Layer: 0
-  m_Name: ProductCollecter
+  m_Name: ProductTransporter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

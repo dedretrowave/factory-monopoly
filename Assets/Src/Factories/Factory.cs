@@ -9,7 +9,7 @@ namespace Src.Factories
         [SerializeField] private float _defaultProductionTimeSpan;
         [SerializeField] private float _productionTimeByLevelReduction = 2f;
         [SerializeField] private Upgrader _upgrader;
-        [SerializeField] private Platform _platform;
+        [SerializeField] private ProductPlatform _platform;
         [SerializeField] private Product _producableProduct;
 
         private float _productionTimeSpan;
@@ -57,9 +57,7 @@ namespace Src.Factories
 
         private void Produce()
         {
-            Product newProduct = Instantiate(_producableProduct, transform);
-            
-            _platform.AddProduct(newProduct);
+            _platform.Spawn(_producableProduct);
         }
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Src.Player
 {
-    public class ProductCollector : MonoBehaviour
+    public class ProductTransporter : MonoBehaviour
     {
         [SerializeField] private float _maxProductsCarried = 4f;
 
@@ -14,8 +14,7 @@ namespace Src.Player
 
         private void OnTriggerStay(Collider other)
         {
-            if (_products.Count >= _maxProductsCarried
-                || !other.TryGetComponent(out Platform platform)) return;
+            if (!other.TryGetComponent(out ProductPlatform platform)) return;
 
             switch (platform.Type)
             {
@@ -23,31 +22,35 @@ namespace Src.Player
                     Take(platform);
                     break;
                 case PlatformType.Shop:
-                    Give(platform);
+                    Deliver(platform);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
         }
 
-        private void Take(Platform platform)
+        private void Take(ProductPlatform platform)
         {
-            Product product = platform.GetProduct();
+            Product product = platform.Get();
 
             if (product == null) return;
             
             Collect(product);
         }
 
-        private void Give(Platform platform)
+        private void Deliver(ProductPlatform platform)
         {
+            if (_products.Count == 0 || platform.IsFull) return;
+
             Product product = _products.Pop();
             
-            platform.AddProduct(product);
+            platform.Add(product);
         }
 
         private void Collect(Product product)
         {
+            if (_products.Count >= _maxProductsCarried) return;
+            
             product.transform.SetParent(transform);
             product.transform.localPosition = new Vector3(0f, 1f * _products.Count, 0f);
             
