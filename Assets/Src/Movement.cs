@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Src.Player
+namespace Src
 {
     public class Movement : MonoBehaviour
     {

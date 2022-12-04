@@ -1,5 +1,8 @@
 ﻿using System.Collections;
+using System.ComponentModel;
 using Src.Factories.Leveling;
+using Src.Platforms;
+using Src.Platforms.Base;
 using UnityEngine;
 
 namespace Src.Factories
@@ -9,7 +12,7 @@ namespace Src.Factories
         [SerializeField] private float _defaultProductionTimeSpan;
         [SerializeField] private float _productionTimeByLevelReduction = 2f;
         [SerializeField] private Upgrader _upgrader;
-        [SerializeField] private ProductPlatform _platform;
+        [SerializeField] private Platform _platform;
         [SerializeField] private Product _producableProduct;
 
         private float _productionTimeSpan;
@@ -57,7 +60,16 @@ namespace Src.Factories
 
         private void Produce()
         {
-            _platform.Spawn(_producableProduct);
+            Product newProduct = Instantiate(_producableProduct, transform);
+
+            try
+            {
+                _platform.Add(newProduct);
+            }
+            catch (WarningException e)
+            {
+                Destroy(newProduct.gameObject);
+            }
         }
     }
 }

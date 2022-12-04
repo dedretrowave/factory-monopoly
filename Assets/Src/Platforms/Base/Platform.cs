@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
-using Src.Factories.PlatformPoint;
+using System.ComponentModel;
+using Src.Platforms.PlatformPoint;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Src.Factories
+namespace Src.Platforms.Base
 {
-    public class ProductPlatform : MonoBehaviour
+    public class Platform : MonoBehaviour
     {
         [SerializeField] private PlatformType _type;
         [SerializeField] private List<PlatformPlace> _places = new();
@@ -17,26 +18,14 @@ namespace Src.Factories
         public UnityEvent OnOutOfSpace;
         public UnityEvent OnFreeSpace;
 
-        public void Spawn(Product productPrefab)
-        {
-            Product newProduct = Instantiate(productPrefab, transform);
-
-            PlatformPlace freePlace = GetFreePlace();
-
-            if (freePlace == null)
-            {
-                Destroy(newProduct.gameObject);
-                return;
-            }
-
-            Place(newProduct, freePlace);
-        }
-
         public void Add(Product product)
         {
             PlatformPlace freePlace = GetFreePlace();
 
-            if (freePlace == null) return;
+            if (freePlace == null)
+            {
+                throw new WarningException("No Free Place");
+            }
             
             Place(product, freePlace);
         }

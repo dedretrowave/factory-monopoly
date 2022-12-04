@@ -1,5 +1,7 @@
 ﻿using System;
 using Src.Factories;
+using Src.Platforms;
+using Src.Platforms.Base;
 using UnityEngine;
 
 namespace Src.Clients
@@ -10,7 +12,7 @@ namespace Src.Clients
         
         private void OnTriggerEnter(Collider other)
         {
-            if (!other.TryGetComponent(out ProductPlatform platform)) return;
+            if (!other.TryGetComponent(out Platform platform)) return;
             
             
         }

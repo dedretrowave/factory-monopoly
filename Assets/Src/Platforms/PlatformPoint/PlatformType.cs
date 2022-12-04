@@ -1,4 +1,4 @@
-﻿namespace Src.Factories.PlatformPoint
+﻿namespace Src.Platforms.PlatformPoint
 {
     public enum PlatformType
     {

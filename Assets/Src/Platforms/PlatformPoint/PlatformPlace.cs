@@ -1,7 +1,6 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Src.Factories.PlatformPoint
+namespace Src.Platforms.PlatformPoint
 {
     public class PlatformPlace : MonoBehaviour
     {

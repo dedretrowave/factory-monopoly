@@ -1,44 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using Src.Factories;
-using Src.Factories.PlatformPoint;
+﻿using System.Collections.Generic;
+using Src.Platforms;
+using Src.Platforms.Base;
 using UnityEngine;
 
-namespace Src.Player
+namespace Src
 {
-    public class ProductTransporter : MonoBehaviour
+    public abstract class ProductTransporter : MonoBehaviour
     {
         [SerializeField] private float _maxProductsCarried = 4f;
 
         private Stack<Product> _products = new();
 
+        protected abstract void InteractWithPlatform(Platform platform);
+
         private void OnTriggerStay(Collider other)
         {
-            if (!other.TryGetComponent(out ProductPlatform platform)) return;
-
-            switch (platform.Type)
-            {
-                case PlatformType.Factory:
-                    Take(platform);
-                    break;
-                case PlatformType.Shop:
-                    Deliver(platform);
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
+            if (!other.TryGetComponent(out Platform platform)) return;
+            
+            InteractWithPlatform(platform);
         }
 
-        private void Take(ProductPlatform platform)
+        protected void GetFromPlatform(Platform platform)
         {
             Product product = platform.Get();
 
             if (product == null) return;
             
-            Collect(product);
+            MoveToSelf(product);
         }
 
-        private void Deliver(ProductPlatform platform)
+        protected void Deliver(Platform platform)
         {
             if (_products.Count == 0 || platform.IsFull) return;
 
@@ -47,7 +38,7 @@ namespace Src.Player
             platform.Add(product);
         }
 
-        private void Collect(Product product)
+        private void MoveToSelf(Product product)
         {
             if (_products.Count >= _maxProductsCarried) return;
             
