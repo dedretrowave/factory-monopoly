@@ -17,6 +17,7 @@ namespace Src.Platforms.Base
 
         public UnityEvent OnOutOfSpace;
         public UnityEvent OnFreeSpace;
+        public UnityEvent<Product> OnPlace;
 
         public void Add(Product product)
         {
@@ -70,6 +71,7 @@ namespace Src.Platforms.Base
             product.transform.localPosition = Vector3.zero;
             freePlace.Product = product;
             freePlace.IsOccupied = true;
+            OnPlace.Invoke(product);
         }
     }
 }

@@ -11,7 +11,7 @@ namespace Src.Clients
         [SerializeField] private Movement _movement;
         [SerializeField] private float _rotationDistance = 1f;
 
-        private Vector2 _direction;
+        private Vector3 _direction;
 
         private int _startPointIndex = 0;
         private int _endPointIndex = 1;

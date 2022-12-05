@@ -20,13 +20,17 @@ namespace Src
             InteractWithPlatform(platform);
         }
 
-        protected void GetFromPlatform(Platform platform)
+        protected Product GetFromPlatform(Platform platform)
         {
+            if (_products.Count >= _maxProductsCarried) return null;
+            
             Product product = platform.Get();
 
-            if (product == null) return;
+            if (product == null) return null;
             
             MoveToSelf(product);
+
+            return product;
         }
 
         protected void Deliver(Platform platform)

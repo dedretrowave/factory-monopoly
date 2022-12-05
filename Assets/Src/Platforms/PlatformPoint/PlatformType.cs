@@ -3,6 +3,7 @@
     public enum PlatformType
     {
         Factory,
-        Shop
+        Shop,
+        Trash
     }
 }
