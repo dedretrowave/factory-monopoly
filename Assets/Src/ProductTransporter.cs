@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using Src.Platforms;
 using Src.Platforms.Base;
 using UnityEngine;
@@ -38,8 +39,16 @@ namespace Src
             if (_products.Count == 0 || platform.IsFull) return;
 
             Product product = _products.Pop();
-            
-            platform.Add(product);
+
+            try
+            {
+                platform.Add(product);
+            }
+            catch (WarningException e)
+            {
+                Debug.Log(e.Message);
+                _products.Push(product);
+            }
         }
 
         private void MoveToSelf(Product product)

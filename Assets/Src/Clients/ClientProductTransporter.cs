@@ -7,12 +7,11 @@ namespace Src.Clients
 {
     public class ClientProductTransporter : ProductTransporter
     {
-        [SerializeField] private Money _moneyPrefab; 
+        [SerializeField] private Money _moneyPrefab;
         [SerializeField] private Platform _moneyPlatform;
         
         protected override void InteractWithPlatform(Platform platform)
         {
-            Debug.Log(platform.Type);
             switch (platform.Type)
             {
                 case PlatformType.Shop:
