@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Src
+namespace Src.Base
 {
     public class Product : MonoBehaviour
     {

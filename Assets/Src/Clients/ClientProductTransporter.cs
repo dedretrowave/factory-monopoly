@@ -1,5 +1,6 @@
 ﻿using System;
-using Src.Platforms.Base;
+using Src.Base;
+using Src.Platforms;
 using Src.Platforms.PlatformPoint;
 using UnityEngine;
 
@@ -24,7 +25,7 @@ namespace Src.Clients
                     break;
                 case PlatformType.Factory:
                 default:
-                    throw new ArgumentOutOfRangeException();
+                    return;
             }
         }
 

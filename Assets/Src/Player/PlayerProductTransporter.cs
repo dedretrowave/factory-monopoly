@@ -1,5 +1,6 @@
 ﻿using System;
-using Src.Platforms.Base;
+using Src.Base;
+using Src.Platforms;
 using Src.Platforms.PlatformPoint;
 
 namespace Src.Player
@@ -16,8 +17,10 @@ namespace Src.Player
                 case PlatformType.Shop:
                     Deliver(platform);
                     break;
+                case PlatformType.Money:
+                case PlatformType.Upgrade:
                 default:
-                    throw new ArgumentOutOfRangeException();
+                    return;
             }
         }
     }

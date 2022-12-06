@@ -1,15 +1,17 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
+using Src.Base;
 using Src.Platforms.PlatformPoint;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Src.Platforms.Base
+namespace Src.Platforms
 {
     public class Platform : MonoBehaviour
     {
         [SerializeField] private PlatformType _type;
         [SerializeField] private List<PlatformPlace> _places = new();
+
         private bool _isFull;
 
         public PlatformType Type => _type;
@@ -17,7 +19,7 @@ namespace Src.Platforms.Base
 
         public UnityEvent OnOutOfSpace;
         public UnityEvent OnFreeSpace;
-        public UnityEvent<Product> OnPlace;
+        public UnityEvent OnPlace;
 
         public void Add(Product product)
         {
@@ -71,7 +73,7 @@ namespace Src.Platforms.Base
             product.transform.localPosition = Vector3.zero;
             freePlace.Product = product;
             freePlace.IsOccupied = true;
-            OnPlace.Invoke(product);
+            OnPlace.Invoke();
         }
     }
 }

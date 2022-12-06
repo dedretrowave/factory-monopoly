@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.ComponentModel;
-using Src.Factories.Leveling;
+using Src.Base;
+using Src.Leveling;
 using Src.Platforms;
-using Src.Platforms.Base;
 using UnityEngine;
 
 namespace Src.Factories
@@ -11,7 +11,7 @@ namespace Src.Factories
     {
         [SerializeField] private float _defaultProductionTimeSpan;
         [SerializeField] private float _productionTimeByLevelReduction = 2f;
-        [SerializeField] private Upgrader _upgrader;
+        [SerializeField] private Level _upgrader;
         [SerializeField] private Platform _platform;
         [SerializeField] private Product _producableProduct;
 
@@ -20,7 +20,6 @@ namespace Src.Factories
 
         private void Start()
         {
-            _upgrader.OnUpgrade.AddListener(ApplyUpgrade);
             _platform.OnOutOfSpace.AddListener(StopProduction);
             _platform.OnFreeSpace.AddListener(ContinueProduction);
             
@@ -31,11 +30,6 @@ namespace Src.Factories
         private void OnDisable()
         {
             StopCoroutine(_productionCoroutine);
-        }
-
-        private void ApplyUpgrade(int level)
-        {
-            _productionTimeSpan /= _productionTimeByLevelReduction;
         }
 
         private IEnumerator LaunchProduction()

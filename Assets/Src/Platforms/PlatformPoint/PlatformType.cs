@@ -4,6 +4,8 @@
     {
         Factory,
         Shop,
-        Trash
+        Trash,
+        Upgrade,
+        Money
     }
 }

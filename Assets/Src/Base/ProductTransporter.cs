@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 using Src.Platforms;
-using Src.Platforms.Base;
 using UnityEngine;
 
-namespace Src
+namespace Src.Base
 {
     public abstract class ProductTransporter : MonoBehaviour
     {

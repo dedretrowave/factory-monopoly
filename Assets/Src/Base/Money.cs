@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace Src.Clients
+﻿namespace Src.Base
 {
     public class Money : Product
     {
