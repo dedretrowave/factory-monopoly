@@ -20,6 +20,12 @@ namespace Src.Player
             {
                 case PlatformType.Money:
                     Money money = (Money) platform.Get();
+                    
+                    if (money == null)
+                    {
+                        return;
+                    }
+                    
                     Destroy(money.gameObject);
                     _wallet.Add();
                     break;
@@ -32,6 +38,7 @@ namespace Src.Player
                     {
                         return;
                     }
+                    
                     Money mockMoney = Instantiate(_moneyPrefab, transform);
                     platform.Add(mockMoney);
                     break;
