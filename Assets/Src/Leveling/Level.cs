@@ -9,8 +9,9 @@ namespace Src.Leveling
         
         private int _currentLevel = 0;
 
-        public UnityEvent<int> OnUpgrade;
+        public UnityEvent OnUpgrade;
         public UnityEvent OnLevelZeroBypassed;
+        public UnityEvent OnMaxLevelReached;
 
         public int CurrentLevel => _currentLevel;
 
@@ -23,12 +24,13 @@ namespace Src.Leveling
             if (newLevel >= _maxLevel)
             {
                 _currentLevel = _maxLevel;
-                OnUpgrade.Invoke(_currentLevel);
+                OnUpgrade.Invoke();
+                OnMaxLevelReached.Invoke();
                 return;
             }
 
             _currentLevel = newLevel;
-            OnUpgrade.Invoke(_currentLevel);
+            OnUpgrade.Invoke();
         }
     }
 }

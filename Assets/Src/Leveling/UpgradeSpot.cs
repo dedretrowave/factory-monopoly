@@ -1,10 +1,11 @@
-﻿using Src.Base;
+﻿using System.Collections;
+using Src.Base;
 using Src.Platforms;
 using UnityEngine;
 
 namespace Src.Leveling
 {
-    public class Upgrader : MonoBehaviour
+    public class UpgradeSpot : MonoBehaviour
     {
         [SerializeField] private Platform _platform;
         [SerializeField] private float _costOfUpgrade;
@@ -15,13 +16,19 @@ namespace Src.Leveling
         private void Start()
         {
             _platform.OnPlace.AddListener(Upgrade);
+            _level.OnMaxLevelReached.AddListener(Remove);
+        }
+
+        private void Remove()
+        {
+            Destroy(gameObject);
         }
 
         private void Upgrade()
         {
             Product product = _platform.Get();
             Destroy(product.gameObject);
-            
+
             _moneyTransferred++;
 
             if (_moneyTransferred >= _costOfUpgrade)

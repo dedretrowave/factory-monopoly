@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel;
-using Src.Base;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,32 +9,39 @@ namespace Src.Player
         [SerializeField] private int _startingMoney;
         private int _currentMoney = 0;
 
+        public int CurrentMoney
+        {
+            get => _currentMoney;
+            private set
+            {
+                _currentMoney = value;
+                OnMoneyChange.Invoke(_currentMoney);
+            }
+        }
+
         public UnityEvent<int> OnMoneyChange;
 
         private void Start()
         {
-            _currentMoney = _startingMoney;
+            CurrentMoney = _startingMoney;
         }
 
         public void Add(int amount = 1)
         {
-            _currentMoney += amount;
-            OnMoneyChange.Invoke(_currentMoney);
+            CurrentMoney += amount;
         }
 
         public void Reduce(int amount = 1)
         {
-            int newMoney = _currentMoney - amount;
+            int newMoney = CurrentMoney - amount;
 
             if (newMoney < 0)
             {
                 _currentMoney = 0;
-                OnMoneyChange.Invoke(_currentMoney);
                 throw new WarningException("Out Of Money");
             }
 
-            _currentMoney = newMoney;
-            OnMoneyChange.Invoke(_currentMoney);
+            CurrentMoney = newMoney;
         }
     }
 }

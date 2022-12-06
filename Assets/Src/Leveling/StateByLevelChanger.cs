@@ -6,7 +6,8 @@ namespace Src.Leveling
     public class StateByLevelChanger : MonoBehaviour
     {
         [SerializeField] private Level _level;
-        [SerializeField] private List<Transform> _components;
+        [SerializeField] [Tooltip("Components To Enable After Level 1")] 
+        private List<Transform> _components;
 
         private int _currentLevel;
 

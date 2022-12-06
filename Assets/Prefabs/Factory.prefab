@@ -189,7 +189,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2948984090790196527}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5060358, y: 0, z: 6.1102095}
+  m_LocalPosition: {x: 0.5060358, y: 0.18, z: 6.1102095}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -599,6 +599,7 @@ GameObject:
   - component: {fileID: 5806752912301010844}
   - component: {fileID: 5806752912301010847}
   - component: {fileID: 7523400277247697970}
+  - component: {fileID: 1789409407033441482}
   m_Layer: 0
   m_Name: Factory
   m_TagString: Untagged
@@ -622,7 +623,7 @@ Transform:
   - {fileID: 5806752912311282707}
   - {fileID: 666572122991531187}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5806752912301010844
 MonoBehaviour:
@@ -638,7 +639,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _defaultProductionTimeSpan: 1
   _productionTimeByLevelReduction: 2
-  _upgrader: {fileID: 5806752912301010847}
+  _level: {fileID: 5806752912301010847}
   _platform: {fileID: 5806752912311282706}
   _producableProduct: {fileID: 5800311984539147121, guid: 969339820ae9a19489a67ec6f5f054ec, type: 3}
 --- !u!114 &5806752912301010847
@@ -660,6 +661,9 @@ MonoBehaviour:
   OnLevelZeroBypassed:
     m_PersistentCalls:
       m_Calls: []
+  OnMaxLevelReached:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7523400277247697970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -676,6 +680,22 @@ MonoBehaviour:
   _components:
   - {fileID: 5806752913768872084}
   - {fileID: 5806752912311282707}
+--- !u!114 &1789409407033441482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5806752912301010842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d21dabf6b5e3450db9ceb3a4aa963d72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objects:
+  - {fileID: 2948984090790196527}
+  _time: 2
+  _level: {fileID: 5806752912301010847}
 --- !u!1 &5806752912311282704
 GameObject:
   m_ObjectHideFlags: 0
