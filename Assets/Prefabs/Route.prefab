@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5410619316605248696}
+  - component: {fileID: 7792158040631524285}
   m_Layer: 0
   m_Name: CarrierSpawner
   m_TagString: Untagged
@@ -31,6 +32,21 @@ Transform:
   m_Father: {fileID: 6571009092541948106}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7792158040631524285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354057530764560408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8b3b812b2cf4e8198277a4bb8103122, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _carrierPrefab: {fileID: 3807044944933974847, guid: c9bd1efbefca5fb4791f9c3f58bafc39, type: 3}
+  _route: {fileID: 6571009092541948107}
+  _level: {fileID: 6571009092541948109}
 --- !u!1 &6571009090601476560
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,7 +338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7c5283d72c44720ab2eece0310d261f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 3
+  _type: 4
   _places:
   - {fileID: 6571009091536113721}
   - {fileID: 6571009091861154309}
@@ -351,7 +367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _platform: {fileID: 6571009091116650397}
   _costOfUpgrade: 15
-  _level: {fileID: 0}
+  _level: {fileID: 6571009092541948109}
 --- !u!64 &6571009091116650395
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -548,7 +564,6 @@ GameObject:
   - component: {fileID: 6571009092541948107}
   - component: {fileID: 6571009092541948108}
   - component: {fileID: 6571009092541948109}
-  - component: {fileID: 6571009092541948110}
   - component: {fileID: 9113794186665358618}
   m_Layer: 0
   m_Name: Route
@@ -605,7 +620,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _level: {fileID: 6571009092541948109}
-  _components: []
+  _components:
+  - {fileID: 5410619316605248696}
 --- !u!114 &6571009092541948109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -628,20 +644,6 @@ MonoBehaviour:
   OnMaxLevelReached:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &6571009092541948110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6571009092541948105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8b3b812b2cf4e8198277a4bb8103122, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _carrierPrefab: {fileID: 3807044944933974847, guid: c9bd1efbefca5fb4791f9c3f58bafc39, type: 3}
-  _route: {fileID: 6571009092541948107}
 --- !u!114 &9113794186665358618
 MonoBehaviour:
   m_ObjectHideFlags: 0

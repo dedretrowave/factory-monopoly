@@ -12,9 +12,10 @@ namespace Src.Player
         {
             switch (platform.Type)
             {
-                case PlatformType.Factory:
+                case PlatformType.FactoryOutput:
                     GetFromPlatform(platform);
                     break;
+                case PlatformType.FactoryInput:
                 case PlatformType.Trash:
                 case PlatformType.Shop:
                     Deliver(platform);

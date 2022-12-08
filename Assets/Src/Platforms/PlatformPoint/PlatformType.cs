@@ -2,7 +2,8 @@
 {
     public enum PlatformType
     {
-        Factory,
+        FactoryOutput,
+        FactoryInput,
         Shop,
         Trash,
         Upgrade,

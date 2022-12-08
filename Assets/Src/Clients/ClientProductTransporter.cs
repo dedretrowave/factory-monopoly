@@ -27,7 +27,8 @@ namespace Src.Clients
                 case PlatformType.Trash:
                     Deliver(platform);
                     break;
-                case PlatformType.Factory:
+                case PlatformType.FactoryOutput:
+                case PlatformType.FactoryInput:
                 default:
                     return;
             }

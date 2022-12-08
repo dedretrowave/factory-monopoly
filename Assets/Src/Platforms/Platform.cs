@@ -25,11 +25,6 @@ namespace Src.Platforms
         {
             PlatformPlace freePlace = GetFreePlace();
 
-            if (freePlace == null)
-            {
-                throw new WarningException("No Free Place");
-            }
-            
             Place(product, freePlace);
         }
 
@@ -55,16 +50,7 @@ namespace Src.Platforms
 
         private PlatformPlace GetFreePlace()
         {
-            PlatformPlace freePoint = _places.Find(place => !place.IsOccupied);
-
-            if (freePoint == null)
-            {
-                _isFull = true;
-                OnOutOfSpace.Invoke();
-                return null;
-            }
-
-            return freePoint;
+            return _places.Find(place => !place.IsOccupied);
         }
 
         private void Place(Product product, PlatformPlace freePlace)
@@ -74,6 +60,12 @@ namespace Src.Platforms
             freePlace.Product = product;
             freePlace.IsOccupied = true;
             OnPlace.Invoke();
+
+            if (!_places.Find(place => !place.IsOccupied))
+            {
+                _isFull = true;
+                OnOutOfSpace.Invoke();
+            }
         }
     }
 }
