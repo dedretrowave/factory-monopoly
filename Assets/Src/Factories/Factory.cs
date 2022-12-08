@@ -66,7 +66,7 @@ namespace Src.Factories
             {
                 _platform.Add(newProduct);
             }
-            catch (WarningException e)
+            catch (WarningException)
             {
                 Destroy(newProduct.gameObject);
             }

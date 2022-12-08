@@ -34,7 +34,7 @@ namespace Src.Player
                     {
                         _wallet.Reduce();
                     }
-                    catch (WarningException e)
+                    catch (WarningException)
                     {
                         return;
                     }

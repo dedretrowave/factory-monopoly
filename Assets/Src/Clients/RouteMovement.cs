@@ -1,23 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using Src.Player;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace Src.Clients
 {
     public class RouteMovement : MonoBehaviour
     {
-        [SerializeField] private List<Transform> _points;
         [SerializeField] private Movement _movement;
         [SerializeField] private float _rotationDistance = 1f;
 
         private Vector3 _direction;
+        private List<Transform> _points;
 
         private int _startPointIndex = 0;
         private int _endPointIndex = 1;
 
-        private void Start()
+        public void ApplyRoute(List<Transform> route)
         {
+            _points = route;
+            
             transform.position = _points[_startPointIndex].position;
 
             _direction = (_points[_endPointIndex].position - _points[_startPointIndex].position).normalized;

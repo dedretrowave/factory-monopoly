@@ -14,6 +14,7 @@ namespace Src.Player
                 case PlatformType.Factory:
                     GetFromPlatform(platform);
                     break;
+                case PlatformType.Trash:
                 case PlatformType.Shop:
                     Deliver(platform);
                     break;

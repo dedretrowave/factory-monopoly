@@ -1,5 +1,4 @@
-﻿using System;
-using Src.Base;
+﻿using Src.Base;
 using Src.Platforms;
 using Src.Platforms.PlatformPoint;
 using UnityEngine;
@@ -10,6 +9,11 @@ namespace Src.Clients
     {
         [SerializeField] private Money _moneyPrefab;
         [SerializeField] private Platform _moneyPlatform;
+
+        public void SetDependencies(Platform moneyPlatform)
+        {
+            _moneyPlatform = moneyPlatform;
+        }
         
         protected override void InteractWithPlatform(Platform platform)
         {
@@ -17,7 +21,7 @@ namespace Src.Clients
             {
                 case PlatformType.Shop:
                     Product product = GetFromPlatform(platform);
-                    if (product == null) return; 
+                    if (product == null) return;
                     TransferMoneyToPlatform();
                     break;
                 case PlatformType.Trash:
