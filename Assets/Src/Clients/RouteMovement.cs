@@ -7,9 +7,9 @@ namespace Src.Clients
     {
         [SerializeField] private Movement _movement;
         [SerializeField] private float _rotationDistance = 1f;
+        [SerializeField] private List<Transform> _points;
 
         private Vector3 _direction;
-        private List<Transform> _points;
 
         private int _startPointIndex = 0;
         private int _endPointIndex = 1;

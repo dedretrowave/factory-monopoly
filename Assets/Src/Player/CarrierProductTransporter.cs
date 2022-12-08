@@ -1,11 +1,12 @@
 ﻿using System;
 using Src.Base;
+using Src.Clients;
 using Src.Platforms;
 using Src.Platforms.PlatformPoint;
 
 namespace Src.Player
 {
-    public class PlayerProductTransporter : ProductTransporter
+    public class CarrierProductTransporter : ProductTransporter
     {
         protected override void InteractWithPlatform(Platform platform)
         {

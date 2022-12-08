@@ -198,7 +198,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &252002403 stripped
 MonoBehaviour:
@@ -211,16 +211,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 813606e297614695a8c4a83b488c2de6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &386171373 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4467358770999238320, guid: 80e92ca7968395c489ab8736a4f2e05f, type: 3}
-  m_PrefabInstance: {fileID: 4045235627427803147}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &395280790 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3734026501915693909, guid: 80e92ca7968395c489ab8736a4f2e05f, type: 3}
-  m_PrefabInstance: {fileID: 4045235627427803147}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &592900396
 GameObject:
   m_ObjectHideFlags: 0
@@ -317,7 +307,7 @@ RectTransform:
   - {fileID: 1765633772}
   - {fileID: 1859737757}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -367,7 +357,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
@@ -558,16 +548,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901d09e185fa49cca268e95961cef166, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1172156656 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 511957573984461822, guid: 80e92ca7968395c489ab8736a4f2e05f, type: 3}
-  m_PrefabInstance: {fileID: 4045235627427803147}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1636909601 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 890986331504321404, guid: 80e92ca7968395c489ab8736a4f2e05f, type: 3}
-  m_PrefabInstance: {fileID: 4045235627427803147}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1765633771
 GameObject:
   m_ObjectHideFlags: 0
@@ -754,11 +734,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _wallet: {fileID: 252002403}
   _text: {fileID: 1859737758}
---- !u!4 &2095333639 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 380451463567602284, guid: 80e92ca7968395c489ab8736a4f2e05f, type: 3}
-  m_PrefabInstance: {fileID: 4045235627427803147}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1076010708647813
 GameObject:
   m_ObjectHideFlags: 0
@@ -873,26 +848,6 @@ PrefabInstance:
       propertyPath: _clientRoute
       value: 
       objectReference: {fileID: 7834777551369770793}
-    - target: {fileID: 3584787314425626842, guid: 80e92ca7968395c489ab8736a4f2e05f, type: 3}
-      propertyPath: _points.Array.data[0]
-      value: 
-      objectReference: {fileID: 2095333639}
-    - target: {fileID: 3584787314425626842, guid: 80e92ca7968395c489ab8736a4f2e05f, type: 3}
-      propertyPath: _points.Array.data[1]
-      value: 
-      objectReference: {fileID: 395280790}
-    - target: {fileID: 3584787314425626842, guid: 80e92ca7968395c489ab8736a4f2e05f, type: 3}
-      propertyPath: _points.Array.data[2]
-      value: 
-      objectReference: {fileID: 1172156656}
-    - target: {fileID: 3584787314425626842, guid: 80e92ca7968395c489ab8736a4f2e05f, type: 3}
-      propertyPath: _points.Array.data[3]
-      value: 
-      objectReference: {fileID: 386171373}
-    - target: {fileID: 3584787314425626842, guid: 80e92ca7968395c489ab8736a4f2e05f, type: 3}
-      propertyPath: _points.Array.data[4]
-      value: 
-      objectReference: {fileID: 1636909601}
     - target: {fileID: 3978517801743015401, guid: 80e92ca7968395c489ab8736a4f2e05f, type: 3}
       propertyPath: _route
       value: 
@@ -1033,7 +988,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6579230334948928768, guid: b47d21b030e9ad44a8077a7bb26c6847, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6579230334948928768, guid: b47d21b030e9ad44a8077a7bb26c6847, type: 3}
       propertyPath: m_LocalPosition.x
