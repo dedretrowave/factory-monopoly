@@ -4,15 +4,16 @@ using Src.Base;
 using Src.Leveling;
 using Src.Platforms;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-namespace Src.Factories
+namespace Src.Factories.Base
 {
     public class Factory : MonoBehaviour
     {
         [SerializeField] private float _defaultProductionTimeSpan;
         [SerializeField] private float _productionTimeByLevelReduction = 2f;
         [SerializeField] private Level _level;
-        [SerializeField] private Platform _platform;
+        [SerializeField] private Platform _outputPlatform;
         [SerializeField] private Product _producableProduct;
 
         private float _productionTimeSpan;
@@ -21,11 +22,8 @@ namespace Src.Factories
         private void Start()
         {
             _level.OnUpgrade.AddListener(Upgrade);
-            _platform.OnOutOfSpace.AddListener(StopProduction);
-            _platform.OnFreeSpace.AddListener(ContinueProduction);
             
             _productionTimeSpan = _defaultProductionTimeSpan;
-            _productionCoroutine = StartCoroutine(LaunchProduction());
         }
 
         private void Upgrade()
@@ -38,38 +36,25 @@ namespace Src.Factories
             StopCoroutine(_productionCoroutine);
         }
 
-        private IEnumerator LaunchProduction()
+        public IEnumerator ProduceAfterTimeout()
         {
-            while (true)
-            {
-                yield return new WaitForSeconds(_productionTimeSpan);
+            yield return new WaitForSeconds(_productionTimeSpan);
             
-                Produce();
-            }
-        }
-
-        private void StopProduction()
-        {
-            StopCoroutine(_productionCoroutine);
-        }
-
-        private void ContinueProduction()
-        {
-            _productionCoroutine = StartCoroutine(LaunchProduction());
+            Produce();
         }
 
         private void Produce()
         {
             Product newProduct = Instantiate(_producableProduct, transform);
 
-            try
-            {
-                _platform.Add(newProduct);
-            }
-            catch (WarningException)
-            {
-                Destroy(newProduct.gameObject);
-            }
+            // try
+            // {
+                _outputPlatform.Add(newProduct);
+            // }
+            // catch (WarningException)
+            // {
+            //     Destroy(newProduct.gameObject);
+            // }
         }
     }
 }

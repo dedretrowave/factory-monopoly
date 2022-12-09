@@ -42,7 +42,8 @@ namespace Src.Player
                     Money mockMoney = Instantiate(_moneyPrefab, transform);
                     platform.Add(mockMoney);
                     break;
-                case PlatformType.Factory:
+                case PlatformType.FactoryOutput:
+                case PlatformType.FactoryInput:
                 case PlatformType.Shop:
                 case PlatformType.Trash:
                 default:
