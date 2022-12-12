@@ -8,6 +8,7 @@ namespace Src.Base
     public abstract class ProductTransporter : MonoBehaviour
     {
         [SerializeField] private float _maxProductsCarried = 4f;
+        [SerializeField] private float _intervalBetweenProducts = 1f;
 
         private Stack<Product> _products = new();
 
@@ -55,7 +56,7 @@ namespace Src.Base
             if (_products.Count >= _maxProductsCarried) return;
             
             product.transform.SetParent(transform);
-            product.transform.localPosition = new Vector3(0f, 1f * _products.Count, 0f);
+            product.transform.localPosition = new Vector3(0f, _intervalBetweenProducts * _products.Count, 0f);
             
             _products.Push(product);
         }

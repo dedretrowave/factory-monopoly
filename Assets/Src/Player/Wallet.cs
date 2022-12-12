@@ -24,6 +24,7 @@ namespace Src.Player
         private void Start()
         {
             CurrentMoney = _startingMoney;
+            OnMoneyChange.Invoke(CurrentMoney);
         }
 
         public void Add(int amount = 1)
