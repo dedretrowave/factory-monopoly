@@ -2,6 +2,8 @@
 using Src.Base;
 using Src.Platforms;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace Src.Leveling
 {
@@ -13,10 +15,13 @@ namespace Src.Leveling
 
         private float _moneyTransferred;
 
+        [HideInInspector] public UnityEvent<float> OnPriceChange;
+
         private void Start()
         {
             _platform.OnPlace.AddListener(Upgrade);
             _level.OnMaxLevelReached.AddListener(Remove);
+            OnPriceChange.Invoke(_costOfUpgrade);
         }
 
         private void Remove()
@@ -37,6 +42,8 @@ namespace Src.Leveling
                 _costOfUpgrade *= 1.5f;
                 _moneyTransferred = 0f;
             }
+            
+            OnPriceChange.Invoke(_costOfUpgrade - _moneyTransferred);
         }
     }
 }
