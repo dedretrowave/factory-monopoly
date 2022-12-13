@@ -31,11 +31,6 @@ namespace Src.Factories.Base
             _productionTimeSpan /= _productionTimeByLevelReduction;
         }
 
-        private void OnDisable()
-        {
-            StopCoroutine(_productionCoroutine);
-        }
-
         public IEnumerator ProduceAfterTimeout()
         {
             yield return new WaitForSeconds(_productionTimeSpan);
@@ -47,14 +42,7 @@ namespace Src.Factories.Base
         {
             Product newProduct = Instantiate(_producableProduct, transform);
 
-            // try
-            // {
-                _outputPlatform.Add(newProduct);
-            // }
-            // catch (WarningException)
-            // {
-            //     Destroy(newProduct.gameObject);
-            // }
+            _outputPlatform.Add(newProduct);
         }
     }
 }
