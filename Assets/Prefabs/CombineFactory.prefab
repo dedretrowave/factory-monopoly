@@ -312,6 +312,7 @@ GameObject:
   - component: {fileID: 1841987841429406746}
   - component: {fileID: 1841987841429406749}
   - component: {fileID: 1841987841429406748}
+  - component: {fileID: 373784777157964814}
   m_Layer: 0
   m_Name: OutputPlatform
   m_TagString: Untagged
@@ -349,11 +350,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 0
-  _places:
-  - {fileID: 1841987841537291014}
-  - {fileID: 1841987841678712846}
-  - {fileID: 1841987840475017485}
-  - {fileID: 1841987841053823495}
+  _maxProducts: 4
+  _view: {fileID: 373784777157964814}
   OnOutOfSpace:
     m_PersistentCalls:
       m_Calls: []
@@ -412,6 +410,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &373784777157964814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841987841429406744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66d74a2e17554e59b3d8033504160e53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _places:
+  - {fileID: 1841987841537291014}
+  - {fileID: 1841987841678712846}
+  - {fileID: 1841987840475017485}
+  - {fileID: 1841987841053823495}
 --- !u!1 &1841987841537291012
 GameObject:
   m_ObjectHideFlags: 0
@@ -1378,6 +1393,7 @@ GameObject:
   - component: {fileID: 5261810943829044041}
   - component: {fileID: 5261810943829044038}
   - component: {fileID: 5261810943829044039}
+  - component: {fileID: 5391797284391221372}
   m_Layer: 0
   m_Name: InputPlatform
   m_TagString: Untagged
@@ -1415,11 +1431,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 1
-  _places:
-  - {fileID: 5261810944140498879}
-  - {fileID: 5261810942500551145}
-  - {fileID: 5261810942873805483}
-  - {fileID: 5261810943902390119}
+  _maxProducts: 4
+  _view: {fileID: 5391797284391221372}
   OnOutOfSpace:
     m_PersistentCalls:
       m_Calls: []
@@ -1478,6 +1491,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &5391797284391221372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5261810943829044037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66d74a2e17554e59b3d8033504160e53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _places:
+  - {fileID: 5261810944140498879}
+  - {fileID: 5261810942500551145}
+  - {fileID: 5261810942873805483}
+  - {fileID: 5261810943902390119}
 --- !u!1 &5261810943902390117
 GameObject:
   m_ObjectHideFlags: 0
@@ -1699,6 +1729,7 @@ GameObject:
   - component: {fileID: 1932945243542084500}
   - component: {fileID: 1581135755363001943}
   - component: {fileID: 3037908716611763951}
+  - component: {fileID: 4330858377626801574}
   m_Layer: 0
   m_Name: UpgradeSpot
   m_TagString: Untagged
@@ -1737,11 +1768,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 4
-  _places:
-  - {fileID: 5696743539364030853}
-  - {fileID: 3030127330982540705}
-  - {fileID: 6862240282747068878}
-  - {fileID: 1867561998658638577}
+  _maxProducts: 4
+  _view: {fileID: 4330858377626801574}
   OnOutOfSpace:
     m_PersistentCalls:
       m_Calls: []
@@ -1818,6 +1846,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &4330858377626801574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7055258575914507559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c0c88bb6cdb47e0af1b66b602adba15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7094360796415619944
 GameObject:
   m_ObjectHideFlags: 0

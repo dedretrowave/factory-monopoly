@@ -551,6 +551,7 @@ GameObject:
   m_Component:
   - component: {fileID: 666572122991531187}
   - component: {fileID: 4548213462098010186}
+  - component: {fileID: 5568153260406145767}
   - component: {fileID: 6041163669518234524}
   - component: {fileID: 6698233336221847135}
   - component: {fileID: 7146479017444415207}
@@ -569,7 +570,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2948984090790196527}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.75, y: 0.18, z: 6.1102095}
+  m_LocalPosition: {x: 4.75, y: 0.18, z: 2.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -593,11 +594,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 4
-  _places:
-  - {fileID: 435533313188364685}
-  - {fileID: 7136122850461670825}
-  - {fileID: 1602760304548743622}
-  - {fileID: 5831981827055385337}
+  _maxProducts: 4
+  _view: {fileID: 5568153260406145767}
   OnOutOfSpace:
     m_PersistentCalls:
       m_Calls: []
@@ -607,6 +605,19 @@ MonoBehaviour:
   OnPlace:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5568153260406145767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2948984090790196527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c0c88bb6cdb47e0af1b66b602adba15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _places: []
 --- !u!114 &6041163669518234524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1343,6 +1354,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5806752912311282707}
   - component: {fileID: 5806752912311282706}
+  - component: {fileID: 7618895175908992683}
   - component: {fileID: 5806752912311282708}
   - component: {fileID: 7808719393290670291}
   m_Layer: 0
@@ -1382,11 +1394,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 0
-  _places:
-  - {fileID: 5806752912286767886}
-  - {fileID: 5806752913504290822}
-  - {fileID: 5806752912434551045}
-  - {fileID: 5806752911939631631}
+  _maxProducts: 4
+  _view: {fileID: 7618895175908992683}
   OnOutOfSpace:
     m_PersistentCalls:
       m_Calls: []
@@ -1396,6 +1405,23 @@ MonoBehaviour:
   OnPlace:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7618895175908992683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5806752912311282704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66d74a2e17554e59b3d8033504160e53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _places:
+  - {fileID: 5806752912286767886}
+  - {fileID: 5806752913504290822}
+  - {fileID: 5806752912434551045}
+  - {fileID: 5806752911939631631}
 --- !u!54 &5806752912311282708
 Rigidbody:
   m_ObjectHideFlags: 0

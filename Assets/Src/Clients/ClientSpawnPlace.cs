@@ -1,4 +1,5 @@
 ﻿using Src.Platforms;
+using Src.Platforms.Base;
 using UnityEngine;
 
 namespace Src.Clients
@@ -7,7 +8,7 @@ namespace Src.Clients
     {
         [SerializeField] private ClientProductTransporter _clientPrefab; 
         
-        private Platform _moneyPlatform;
+        private PlatformFacade _moneyPlatform;
         private Route _route;
         private ClientProductTransporter _clientInstance;
 
@@ -21,7 +22,7 @@ namespace Src.Clients
             }
         }
 
-        public void SetDependencies(Route route, Platform moneyPlatform)
+        public void SetDependencies(Route route, PlatformFacade moneyPlatform)
         {
             _route = route;
             _moneyPlatform = moneyPlatform;

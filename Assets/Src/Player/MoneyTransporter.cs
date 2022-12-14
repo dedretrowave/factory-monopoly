@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using Src.Base;
 using Src.Platforms;
+using Src.Platforms.Base;
 using Src.Platforms.PlatformPoint;
 using UnityEngine;
 
@@ -26,7 +27,6 @@ namespace Src.Player
                         return;
                     }
                     
-                    Destroy(money.gameObject);
                     _wallet.Add();
                     break;
                 case PlatformType.Upgrade:

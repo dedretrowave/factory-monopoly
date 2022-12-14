@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Src.Leveling;
 using Src.Platforms;
+using Src.Platforms.Base;
 using UnityEngine;
 
 namespace Src.Clients
@@ -12,7 +13,7 @@ namespace Src.Clients
         [SerializeField] private List<Transform> _points;
         [Header("Dependencies")] 
         [SerializeField] private Route _clientRoute;
-        [SerializeField] private Platform _moneyPlatform;
+        [SerializeField] private PlatformFacade _moneyPlatform;
 
         private int _objectsSpawned;
 

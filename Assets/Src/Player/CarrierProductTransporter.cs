@@ -2,6 +2,7 @@
 using Src.Base;
 using Src.Clients;
 using Src.Platforms;
+using Src.Platforms.Base;
 using Src.Platforms.PlatformPoint;
 
 namespace Src.Player
@@ -13,6 +14,7 @@ namespace Src.Player
             switch (platform.Type)
             {
                 case PlatformType.FactoryOutput:
+                case PlatformType.Money:
                     GetFromPlatform(platform);
                     break;
                 case PlatformType.FactoryInput:
@@ -20,7 +22,6 @@ namespace Src.Player
                 case PlatformType.Shop:
                     Deliver(platform);
                     break;
-                case PlatformType.Money:
                 case PlatformType.Upgrade:
                 default:
                     return;

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 using Src.Platforms;
+using Src.Platforms.Base;
 using UnityEngine;
 
 namespace Src.Base
@@ -24,7 +25,7 @@ namespace Src.Base
         protected Product GetFromPlatform(Platform platform)
         {
             if (_products.Count >= _maxProductsCarried) return null;
-            
+
             Product product = platform.Get();
 
             if (product == null) return null;
@@ -36,19 +37,12 @@ namespace Src.Base
 
         protected void Deliver(Platform platform)
         {
+            Debug.Log(_products.Count);
             if (_products.Count == 0 || platform.IsFull) return;
 
             Product product = _products.Pop();
 
-            try
-            {
-                platform.Add(product);
-            }
-            catch (WarningException e)
-            {
-                Debug.Log(e.Message);
-                _products.Push(product);
-            }
+            platform.Add(product);
         }
 
         private void MoveToSelf(Product product)
