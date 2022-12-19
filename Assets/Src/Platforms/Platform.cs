@@ -54,8 +54,10 @@ namespace Src.Platforms
 
         private void Place(Product product, PlatformPlace freePlace)
         {
-            product.transform.SetParent(freePlace.transform);
-            product.transform.localPosition = Vector3.zero;
+            Transform productTransform;
+            (productTransform = product.transform).SetParent(freePlace.transform);
+            productTransform.localPosition = Vector3.zero;
+            productTransform.localRotation = Quaternion.identity;
             freePlace.Product = product;
             freePlace.IsOccupied = true;
             OnPlace.Invoke();
