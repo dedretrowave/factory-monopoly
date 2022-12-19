@@ -7,7 +7,7 @@ namespace Src.Clients
 {
     public class ClientProductTransporter : ProductTransporter
     {
-        [SerializeField] private Money _moneyPrefab;
+        [SerializeField] private Product _moneyPrefab;
         [SerializeField] private Platform _moneyPlatform;
 
         public void SetDependencies(Platform moneyPlatform)
@@ -36,7 +36,7 @@ namespace Src.Clients
 
         private void TransferMoneyToPlatform()
         {
-            Money money = Instantiate(_moneyPrefab, transform);
+            Product money = Instantiate(_moneyPrefab, transform);
             _moneyPlatform.Add(money);
         }
     }

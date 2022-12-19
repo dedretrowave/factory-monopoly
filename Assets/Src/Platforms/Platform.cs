@@ -1,14 +1,18 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using Src.Base;
 using Src.Platforms.PlatformPoint;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace Src.Platforms
 {
     public class Platform : MonoBehaviour
     {
-        [SerializeField] private PlatformType _type;
+        [SerializeField] private PlatformType _type; 
+        [SerializeField] private ProductType _acceptedProductType;
         [SerializeField] private List<PlatformPlace> _places = new();
 
         private bool _isFull;
@@ -22,6 +26,11 @@ namespace Src.Platforms
 
         public void Add(Product product)
         {
+            if (product.Type != _acceptedProductType)
+            {
+                throw new WarningException("Product type doesn't match");
+            }
+
             PlatformPlace freePlace = GetFreePlace();
 
             Place(product, freePlace);

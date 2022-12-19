@@ -349,6 +349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 0
+  _acceptedProductType: 1
   _places:
   - {fileID: 1841987841537291014}
   - {fileID: 1841987841678712846}
@@ -1415,6 +1416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 1
+  _acceptedProductType: 0
   _places:
   - {fileID: 5261810944140498879}
   - {fileID: 5261810942500551145}
@@ -1737,6 +1739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 4
+  _acceptedProductType: 3
   _places:
   - {fileID: 5696743539364030853}
   - {fileID: 3030127330982540705}

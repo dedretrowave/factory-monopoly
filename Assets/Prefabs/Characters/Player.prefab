@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallet: {fileID: 6755293972408371851}
-  _moneyPrefab: {fileID: 5355730151641096711, guid: 6c99240a19dac524f933a036a7c39116, type: 3}
+  _moneyPrefab: {fileID: 1477705308802538874, guid: 6c99240a19dac524f933a036a7c39116, type: 3}
 --- !u!1 &6755293973139241452
 GameObject:
   m_ObjectHideFlags: 0

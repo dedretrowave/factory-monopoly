@@ -194,6 +194,7 @@ MonoBehaviour:
   _carrierPrefab: {fileID: 3807044944933974847, guid: c9bd1efbefca5fb4791f9c3f58bafc39, type: 3}
   _route: {fileID: 5976492845522905298}
   _level: {fileID: 5976492845522905300}
+  _speedByLevelIncrease: 1.25
 --- !u!1 &5142522715710817056
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,6 +791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 4
+  _acceptedProductType: 3
   _places:
   - {fileID: 5976492846528731168}
   - {fileID: 5976492846207877660}

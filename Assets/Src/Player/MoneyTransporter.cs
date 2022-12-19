@@ -10,7 +10,7 @@ namespace Src.Player
     public class MoneyTransporter : MonoBehaviour
     {
         [SerializeField] private Wallet _wallet;
-        [SerializeField] private Money _moneyPrefab;
+        [SerializeField] private Product _moneyPrefab;
 
         private void OnTriggerStay(Collider other)
         {
@@ -19,9 +19,9 @@ namespace Src.Player
             switch (platform.Type)
             {
                 case PlatformType.Money:
-                    Money money = (Money) platform.Get();
+                    Product money = platform.Get();
                     
-                    if (money == null)
+                    if (money == null || money.Type != ProductType.Money)
                     {
                         return;
                     }
@@ -39,7 +39,7 @@ namespace Src.Player
                         return;
                     }
                     
-                    Money mockMoney = Instantiate(_moneyPrefab, transform);
+                    Product mockMoney = Instantiate(_moneyPrefab, transform);
                     platform.Add(mockMoney);
                     break;
                 case PlatformType.FactoryOutput:

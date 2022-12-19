@@ -5,6 +5,11 @@ namespace Src
     public class Movement : MonoBehaviour
     {
         [SerializeField] private float _speed;
+
+        public void MultiplySpeed(float number)
+        {
+            _speed *= number;
+        }
         
         public void Move(Vector3 direction)
         {

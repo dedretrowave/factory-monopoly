@@ -827,6 +827,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 4
+  _acceptedProductType: 3
   _places:
   - {fileID: 964392611502551082}
   - {fileID: 5080897552382459660}

@@ -16,7 +16,7 @@ namespace Src.UI
 
         private void UpdatePrice(float newPrice)
         {
-            _text.text = newPrice.ToString();
+            _text.text = Mathf.Round(newPrice).ToString();
         }
     }
 }

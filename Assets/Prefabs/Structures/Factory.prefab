@@ -1403,6 +1403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 4
+  _acceptedProductType: 3
   _places:
   - {fileID: 435533313188364685}
   - {fileID: 7136122850461670825}
@@ -2882,6 +2883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 0
+  _acceptedProductType: 0
   _places:
   - {fileID: 5806752912286767886}
   - {fileID: 5806752913504290822}
