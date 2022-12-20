@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _price: 0
-  _type: 3
+  _type: 4
 --- !u!1 &3235126702165629380
 GameObject:
   m_ObjectHideFlags: 0

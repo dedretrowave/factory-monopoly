@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _price: 10
+  _type: 1
 --- !u!54 &3683647482756412338
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -179,7 +180,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: -2432090755550338912, guid: 935a650244b3ecb4fa7824eb53a12256, type: 3}
+  m_Mesh: {fileID: -2432090755550338912, guid: 99a5032efaefb60468685bd24e27c86c, type: 3}
 --- !u!1 &3235126702165629380
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,7 +238,7 @@ Transform:
   m_GameObject: {fileID: 8107020816587176262}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8338987439592657572}

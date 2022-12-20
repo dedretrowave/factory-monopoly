@@ -26,7 +26,7 @@ namespace Src.Platforms
 
         public void Add(Product product)
         {
-            if (product.Type != _acceptedProductType)
+            if (product.Type != _acceptedProductType && _acceptedProductType != ProductType.Any)
             {
                 throw new WarningException("Product type doesn't match");
             }

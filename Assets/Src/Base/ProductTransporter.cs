@@ -54,10 +54,12 @@ namespace Src.Base
         private void MoveToSelf(Product product)
         {
             if (_products.Count >= _maxProductsCarried) return;
-            
-            product.transform.SetParent(transform);
-            product.transform.localPosition = new Vector3(0f, _intervalBetweenProducts * _products.Count, 0f);
-            
+
+            Transform productTransform;
+            (productTransform = product.transform).SetParent(transform);
+            productTransform.localPosition = new Vector3(0f, _intervalBetweenProducts * _products.Count, 0f);
+            productTransform.localRotation = Quaternion.identity;
+
             _products.Push(product);
         }
     }

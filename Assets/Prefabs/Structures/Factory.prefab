@@ -1403,7 +1403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 4
-  _acceptedProductType: 3
+  _acceptedProductType: 4
   _places:
   - {fileID: 435533313188364685}
   - {fileID: 7136122850461670825}
@@ -2724,6 +2724,7 @@ GameObject:
   - component: {fileID: 5806752912301010847}
   - component: {fileID: 7523400277247697970}
   - component: {fileID: 1789409407033441482}
+  - component: {fileID: 3993925056049670418}
   m_Layer: 0
   m_Name: Factory
   m_TagString: Untagged
@@ -2834,6 +2835,27 @@ MonoBehaviour:
   - {fileID: 2948984090790196527}
   _time: 2
   _level: {fileID: 5806752912301010847}
+--- !u!65 &3993925056049670418
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5806752912301010842}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 18.170294, y: 2.7756743, z: 18.385246}
+  m_Center: {x: 9.230382, y: 0.8878372, z: -6.316021}
 --- !u!1 &5806752912311282704
 GameObject:
   m_ObjectHideFlags: 0
@@ -2883,7 +2905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 0
-  _acceptedProductType: 0
+  _acceptedProductType: 1
   _places:
   - {fileID: 5806752912286767886}
   - {fileID: 5806752913504290822}

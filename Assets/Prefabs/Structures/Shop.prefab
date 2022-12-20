@@ -2456,7 +2456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 5
-  _acceptedProductType: 3
+  _acceptedProductType: 4
   _places:
   - {fileID: 4045235626618626890}
   - {fileID: 4045235626436344154}
@@ -2870,7 +2870,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 2
-  _acceptedProductType: 0
+  _acceptedProductType: 1
   _places:
   - {fileID: 4045235626136215491}
   - {fileID: 4045235626892180183}
