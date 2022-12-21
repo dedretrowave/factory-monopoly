@@ -2816,9 +2816,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _level: {fileID: 5806752912301010847}
-  _components:
-  - {fileID: 5806752913768872084}
+  _levelZeroDisabledComponents:
+  - {fileID: 0}
   - {fileID: 5806752912311282707}
+  - {fileID: 5806752913768872084}
 --- !u!114 &1789409407033441482
 MonoBehaviour:
   m_ObjectHideFlags: 0

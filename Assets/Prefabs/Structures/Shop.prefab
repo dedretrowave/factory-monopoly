@@ -2133,12 +2133,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _level: {fileID: 4343425320045976749}
-  _components:
+  _levelZeroDisabledComponents:
+  - {fileID: 7894571504012797208}
   - {fileID: 4045235627073170679}
   - {fileID: 4045235627742771078}
-  - {fileID: 2431725830509055462}
   - {fileID: 7479978299934727317}
-  - {fileID: 7894571504012797208}
+  - {fileID: 0}
 --- !u!114 &4343425320045976749
 MonoBehaviour:
   m_ObjectHideFlags: 0

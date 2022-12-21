@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Src.Leveling
 {
@@ -7,7 +8,7 @@ namespace Src.Leveling
     {
         [SerializeField] private Level _level;
         [SerializeField] [Tooltip("Components To Enable After Level 1")] 
-        private List<Transform> _components;
+        private List<Transform> _levelZeroDisabledComponents;
 
         private int _currentLevel;
 
@@ -26,12 +27,12 @@ namespace Src.Leveling
 
         private void EnableComponents()
         {
-            _components.ForEach(component => component.gameObject.SetActive(true));
+            _levelZeroDisabledComponents.ForEach(component => component.gameObject.SetActive(true));
         }
 
         private void DisableComponents()
         {
-            _components.ForEach(component => component.gameObject.SetActive(false));
+            _levelZeroDisabledComponents.ForEach(component => component.gameObject.SetActive(false));
         }
     }
 }
