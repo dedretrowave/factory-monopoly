@@ -1,8 +1,8 @@
 ﻿using System;
 using System.ComponentModel;
-using Src.Base;
 using Src.Platforms;
 using Src.Platforms.PlatformPoint;
+using Src.Product;
 using UnityEngine;
 
 namespace Src.Player
@@ -10,7 +10,7 @@ namespace Src.Player
     public class MoneyTransporter : MonoBehaviour
     {
         [SerializeField] private Wallet _wallet;
-        [SerializeField] private Product _moneyPrefab;
+        [SerializeField] private Product.Product _moneyPrefab;
 
         private void OnTriggerStay(Collider other)
         {
@@ -19,7 +19,7 @@ namespace Src.Player
             switch (platform.Type)
             {
                 case PlatformType.Money:
-                    Product money = platform.Get();
+                    Product.Product money = platform.Get();
                     
                     if (money == null || money.Type != ProductType.Money)
                     {
@@ -39,7 +39,7 @@ namespace Src.Player
                         return;
                     }
                     
-                    Product mockMoney = Instantiate(_moneyPrefab, transform);
+                    Product.Product mockMoney = Instantiate(_moneyPrefab, transform);
                     platform.Add(mockMoney);
                     break;
                 case PlatformType.FactoryOutput:

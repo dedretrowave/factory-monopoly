@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using Src.Base;
 using Src.Platforms;
 using UnityEngine;
 using UnityEngine.Events;
@@ -31,7 +30,7 @@ namespace Src.Leveling
 
         private void Upgrade()
         {
-            Product product = _platform.Get();
+            Product.Product product = _platform.Get();
             Destroy(product.gameObject);
 
             _moneyTransferred++;

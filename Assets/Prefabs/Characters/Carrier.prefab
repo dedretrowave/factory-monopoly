@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3fa4df6739f494db9dd8b5deed8c7e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxProductsCarried: 1
+  _maxProductsCarried: 0
   _intervalBetweenProducts: 1
 --- !u!135 &3807044943276816250
 SphereCollider:
@@ -217,6 +217,7 @@ GameObject:
   - component: {fileID: 3807044944933974845}
   - component: {fileID: 3807044944933974846}
   - component: {fileID: 3807044944933974847}
+  - component: {fileID: 6993683278766214206}
   m_Layer: 0
   m_Name: Carrier
   m_TagString: Untagged
@@ -271,3 +272,19 @@ MonoBehaviour:
   _points:
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &6993683278766214206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3807044944933974844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c899c6d59484943973a421f4e8e386b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _routeMovement: {fileID: 3807044944933974847}
+  _movement: {fileID: 3807044944933974846}
+  _defaultProductTransporter: {fileID: 3807044943276816249}
+  _speedByLevelIncrease: 1.5

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using Src.Base;
 using Src.Factories.Base;
 using Src.Platforms;
 using UnityEngine;
@@ -28,7 +27,6 @@ namespace Src.Factories
         private void AddToCombineQueue()
         {
             _combineQueue.Enqueue(Combine());
-            Debug.Log(_combineQueue.Count);
 
             if (_queueExecution == null)
             {
@@ -51,7 +49,7 @@ namespace Src.Factories
         {
             if (_isPaused) yield return null;
             
-            Product product = _inputPlatform.Get();
+            Product.Product product = _inputPlatform.Get();
             Destroy(product.gameObject);
             yield return _factory.ProduceAfterTimeout();
         }

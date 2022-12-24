@@ -1,5 +1,4 @@
-﻿using Src.Base;
-using Src.Platforms;
+﻿using Src.Platforms;
 using UnityEngine;
 
 namespace Src.Trash
@@ -15,7 +14,7 @@ namespace Src.Trash
 
         private void Remove()
         {
-            Product product = _platform.Get();
+            Product.Product product = _platform.Get();
             Destroy(product.gameObject);
         }
     }

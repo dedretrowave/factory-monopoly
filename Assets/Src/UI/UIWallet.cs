@@ -12,6 +12,7 @@ namespace Src.UI
         private void Start()
         {
             _wallet.OnMoneyChange.AddListener(UpdateText);
+            UpdateText(_wallet.CurrentMoney);
         }
 
         private void UpdateText(int newValue)

@@ -223,10 +223,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8b3b812b2cf4e8198277a4bb8103122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _carrierPrefab: {fileID: 3807044944933974847, guid: c9bd1efbefca5fb4791f9c3f58bafc39, type: 3}
+  _carrierPrefab: {fileID: 6993683278766214206, guid: c9bd1efbefca5fb4791f9c3f58bafc39, type: 3}
   _route: {fileID: 5976492845522905298}
   _level: {fileID: 5976492845522905300}
-  _speedByLevelIncrease: 1.25
 --- !u!1 &2034649230366906363
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,8 +642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _level: {fileID: 5976492845522905300}
-  _components:
-  - {fileID: 4816121490053409953}
+  _levelZeroDisabledComponents: []
 --- !u!114 &5976492845522905300
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.ComponentModel;
-using Src.Base;
 using Src.Leveling;
 using Src.Platforms;
 using UnityEngine;
@@ -14,7 +13,7 @@ namespace Src.Factories.Base
         [SerializeField] private float _productionTimeByLevelReduction = 2f;
         [SerializeField] private Level _level;
         [SerializeField] private Platform _outputPlatform;
-        [SerializeField] private Product _producableProduct;
+        [SerializeField] private Product.Product _producableProduct;
 
         private float _productionTimeSpan;
         private Coroutine _productionCoroutine;
@@ -40,7 +39,7 @@ namespace Src.Factories.Base
 
         private void Produce()
         {
-            Product newProduct = Instantiate(_producableProduct, transform);
+            Product.Product newProduct = Instantiate(_producableProduct, transform);
 
             _outputPlatform.Add(newProduct);
         }

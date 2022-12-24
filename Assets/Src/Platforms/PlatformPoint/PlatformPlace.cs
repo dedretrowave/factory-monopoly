@@ -1,11 +1,10 @@
-﻿using Src.Base;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Src.Platforms.PlatformPoint
 {
     public class PlatformPlace : MonoBehaviour
     {
         public bool IsOccupied;
-        public Product Product;
+        public Product.Product Product;
     }
 }

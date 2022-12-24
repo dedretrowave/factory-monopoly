@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using Src.Base;
 using Src.Platforms.PlatformPoint;
+using Src.Product;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
@@ -19,12 +19,15 @@ namespace Src.Platforms
 
         public PlatformType Type => _type;
         public bool IsFull => _isFull;
-
+        
+        [HideInInspector]
         public UnityEvent OnOutOfSpace;
+        [HideInInspector]
         public UnityEvent OnFreeSpace;
+        [HideInInspector]
         public UnityEvent OnPlace;
 
-        public void Add(Product product)
+        public void Add(Product.Product product)
         {
             if (product.Type != _acceptedProductType && _acceptedProductType != ProductType.Any)
             {
@@ -36,13 +39,13 @@ namespace Src.Platforms
             Place(product, freePlace);
         }
 
-        public Product Get()
+        public Product.Product Get()
         {
             PlatformPlace place = _places.Find(place => place.IsOccupied);
 
             if (place == null) return null;
 
-            Product product = place.Product;
+            Product.Product product = place.Product;
 
             place.Product = null;
             place.IsOccupied = false;
@@ -61,7 +64,7 @@ namespace Src.Platforms
             return _places.Find(place => !place.IsOccupied);
         }
 
-        private void Place(Product product, PlatformPlace freePlace)
+        private void Place(Product.Product product, PlatformPlace freePlace)
         {
             Transform productTransform;
             (productTransform = product.transform).SetParent(freePlace.transform);
