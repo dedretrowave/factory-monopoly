@@ -5,7 +5,7 @@ namespace Src.ProductTransporting
 {
     public class RouteMovement : MonoBehaviour
     {
-        [SerializeField] private Movement _movement;
+        [SerializeField] private Movement.Base.NonPhysicsMovement _movement;
         [SerializeField] private float _rotationDistance = 1f;
         [SerializeField] private List<Transform> _points;
 

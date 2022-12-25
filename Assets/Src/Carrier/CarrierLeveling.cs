@@ -7,7 +7,7 @@ namespace Src.Carrier
     public class CarrierLeveling : MonoBehaviour
     {
         [SerializeField] private RouteMovement _routeMovement;
-        [SerializeField] private Movement _movement;
+        [SerializeField] private Movement.Base.NonPhysicsMovement _movement;
         [SerializeField] private DefaultProductTransporter _defaultProductTransporter;
         [SerializeField] private float _speedByLevelIncrease;
 

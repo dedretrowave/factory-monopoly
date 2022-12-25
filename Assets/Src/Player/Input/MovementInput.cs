@@ -6,7 +6,7 @@ namespace Src.Player.Input
 {
     public class MovementInput : MonoBehaviour
     {
-        [SerializeField] private Movement _movement;
+        [SerializeField] private Movement.Movement _movement;
         
         private PlayerInput _input;
         private Vector3 _direction;
