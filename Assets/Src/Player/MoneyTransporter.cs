@@ -4,6 +4,7 @@ using Src.Platforms;
 using Src.Platforms.PlatformPoint;
 using Src.Product;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Src.Player
 {
@@ -11,6 +12,8 @@ namespace Src.Player
     {
         [SerializeField] private Wallet _wallet;
         [SerializeField] private Product.Product _moneyPrefab;
+
+        public UnityEvent OnMoneyPickup;
 
         private void OnTriggerStay(Collider other)
         {
@@ -28,6 +31,7 @@ namespace Src.Player
                     
                     Destroy(money.gameObject);
                     _wallet.Add();
+                    OnMoneyPickup.Invoke();
                     break;
                 case PlatformType.Upgrade:
                     try

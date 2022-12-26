@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using Src.Platforms;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Src.Product
 {
@@ -11,6 +12,8 @@ namespace Src.Product
         [SerializeField] private float _intervalBetweenProducts = 1f;
 
         private Stack<Product> _products = new();
+        
+        public UnityEvent OnProductPickup;
 
         protected abstract void InteractWithPlatform(Platform platform);
 
@@ -29,6 +32,7 @@ namespace Src.Product
 
             if (product == null) return null;
             
+            OnProductPickup.Invoke();
             MoveToSelf(product);
 
             return product;
