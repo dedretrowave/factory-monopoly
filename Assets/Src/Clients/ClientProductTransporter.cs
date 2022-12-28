@@ -1,4 +1,5 @@
-﻿using Src.Platforms;
+﻿using System;
+using Src.Platforms;
 using Src.Platforms.PlatformPoint;
 using Src.Product;
 using UnityEngine;
@@ -20,8 +21,16 @@ namespace Src.Clients
             switch (platform.Type)
             {
                 case PlatformType.Shop:
-                    Product.Product product = GetFromPlatform(platform);
-                    if (product == null) return;
+                    try
+                    {
+                        GetFromPlatform(platform);
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.Log(e.Message);
+                        return;
+                    }
+                    
                     TransferMoneyToPlatform();
                     break;
                 case PlatformType.Trash:

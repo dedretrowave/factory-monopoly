@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using DG.Tweening;
 using Src.Platforms.PlatformPoint;
 using Src.Product;
 using UnityEngine;
@@ -68,7 +69,7 @@ namespace Src.Platforms
         {
             Transform productTransform;
             (productTransform = product.transform).SetParent(freePlace.transform);
-            productTransform.localPosition = Vector3.zero;
+            productTransform.DOLocalMove(Vector3.zero, .2f);
             productTransform.localRotation = Quaternion.identity;
             freePlace.Product = product;
             freePlace.IsOccupied = true;

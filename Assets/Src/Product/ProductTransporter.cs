@@ -1,5 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel;
+using DG.Tweening;
+using Src.Misc;
 using Src.Platforms;
 using UnityEngine;
 using UnityEngine.Events;
@@ -10,12 +14,19 @@ namespace Src.Product
     {
         [SerializeField] private float _maxProductsCarried = 4f;
         [SerializeField] private float _intervalBetweenProducts = 1f;
+        [SerializeField] private float _productPickupDelay = .4f;
 
         private Stack<Product> _products = new();
-        
+        private ExecutionQueue _pickupQueue;
+
         public UnityEvent OnProductPickup;
 
         protected abstract void InteractWithPlatform(Platform platform);
+
+        private void Start()
+        {
+            _pickupQueue = gameObject.AddComponent<ExecutionQueue>();
+        }
 
         private void OnTriggerStay(Collider other)
         {
@@ -24,18 +35,15 @@ namespace Src.Product
             InteractWithPlatform(platform);
         }
 
-        protected Product GetFromPlatform(Platform platform)
+        protected void GetFromPlatform(Platform platform)
         {
-            if (_products.Count >= _maxProductsCarried) return null;
+            if (_products.Count >= _maxProductsCarried) throw new Exception("Too much products");
             
             Product product = platform.Get();
 
-            if (product == null) return null;
-            
-            OnProductPickup.Invoke();
-            MoveToSelf(product);
+            if (product == null) throw new Exception("Platform is empty");
 
-            return product;
+            MoveToSelf(product);
         }
 
         protected void Deliver(Platform platform)
@@ -61,8 +69,16 @@ namespace Src.Product
 
             Transform productTransform;
             (productTransform = product.transform).SetParent(transform);
-            productTransform.localPosition = new Vector3(0f, _intervalBetweenProducts * _products.Count, 0f);
+            
+            Vector3 endPoint = new Vector3(
+                0f, 
+                _intervalBetweenProducts * _products.Count,
+                0f);
+
+            productTransform.DOLocalMove(endPoint, _productPickupDelay);
             productTransform.localRotation = Quaternion.identity;
+            
+            OnProductPickup.Invoke();
 
             _products.Push(product);
         }

@@ -3929,6 +3929,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6755293973139241455, guid: 35356efaa79f5164a9f301fcb754f0ca, type: 3}
+      propertyPath: _productPickupSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8698188960873579420, guid: 35356efaa79f5164a9f301fcb754f0ca, type: 3}
       propertyPath: m_IncludeLayers.m_Bits
       value: 2147483647

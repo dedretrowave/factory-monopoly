@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Src.Factories.Base;
+using Src.Misc;
 using Src.Platforms;
 using UnityEngine;
 
@@ -13,55 +13,21 @@ namespace Src.Factories
         [SerializeField] private Platform _inputPlatform;
         [SerializeField] private Platform _outputPlatform;
 
-        private bool _isPaused;
-        private Queue<IEnumerator> _combineQueue = new();
-        private Coroutine _queueExecution;
+        private ExecutionQueue _executionQueue;
 
         private void Start()
         {
-            _outputPlatform.OnOutOfSpace.AddListener(Pause);
-            _outputPlatform.OnFreeSpace.AddListener(Continue);
-            _inputPlatform.OnPlace.AddListener(AddToCombineQueue);
-        }
-
-        private void AddToCombineQueue()
-        {
-            _combineQueue.Enqueue(Combine());
-
-            if (_queueExecution == null)
-            {
-                _queueExecution = StartCoroutine(ExecuteQueue());
-            }
-        }
-
-        private IEnumerator ExecuteQueue()
-        {
-            while (_combineQueue.Count > 0)
-            {
-                yield return _combineQueue.Dequeue();
-            }
-            
-            StopCoroutine(_queueExecution);
-            _queueExecution = null;
+            _executionQueue = gameObject.AddComponent<ExecutionQueue>();
+            _outputPlatform.OnOutOfSpace.AddListener(_executionQueue.Pause);
+            _outputPlatform.OnFreeSpace.AddListener(_executionQueue.Continue);
+            _inputPlatform.OnPlace.AddListener(() => _executionQueue.Add(Combine()));
         }
 
         private IEnumerator Combine()
         {
-            if (_isPaused) yield return null;
-            
             Product.Product product = _inputPlatform.Get();
             Destroy(product.gameObject);
             yield return _factory.ProduceAfterTimeout();
-        }
-
-        private void Pause()
-        {
-            StopCoroutine(_queueExecution);
-        }
-
-        private void Continue()
-        {
-            _queueExecution = StartCoroutine(ExecuteQueue());
         }
     }
 }
