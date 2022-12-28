@@ -181,7 +181,7 @@ Transform:
   m_Children:
   - {fileID: 8193960105612243967}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8189234836704384146
 MonoBehaviour:
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901d09e185fa49cca268e95961cef166, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 10
+  _speed: 45
 --- !u!114 &8189234836704384145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,5 +246,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxProductsCarried: 2
   _intervalBetweenProducts: 1
+  OnProductPickup:
+    m_PersistentCalls:
+      m_Calls: []
   _moneyPrefab: {fileID: 1477705308802538874, guid: 6c99240a19dac524f933a036a7c39116, type: 3}
   _moneyPlatform: {fileID: 0}
