@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901d09e185fa49cca268e95961cef166, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 45
+  _speed: 10
 --- !u!114 &8189234836704384145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,6 +246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxProductsCarried: 2
   _intervalBetweenProducts: 1
+  _productPickupDelay: 0.05
   OnProductPickup:
     m_PersistentCalls:
       m_Calls: []

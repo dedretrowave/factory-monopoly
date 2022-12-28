@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using DG.Tweening;
 using Src.Misc;
 using Src.Platforms;
@@ -14,7 +13,6 @@ namespace Src.Product
     {
         [SerializeField] private float _maxProductsCarried = 4f;
         [SerializeField] private float _intervalBetweenProducts = 1f;
-        [SerializeField] private float _productPickupDelay = .4f;
 
         private Stack<Product> _products = new();
         private ExecutionQueue _pickupQueue;
@@ -23,7 +21,7 @@ namespace Src.Product
 
         protected abstract void InteractWithPlatform(Platform platform);
 
-        private void Start()
+        protected void Start()
         {
             _pickupQueue = gameObject.AddComponent<ExecutionQueue>();
         }
@@ -34,6 +32,29 @@ namespace Src.Product
             
             InteractWithPlatform(platform);
         }
+        
+        private IEnumerator MoveToSelfWithDelay(Product product)
+        {
+            MoveToSelf(product);
+
+            yield return new WaitForSeconds(GlobalSettings.TWEEN_DURATION);
+        }
+        
+        private void MoveToSelf(Product product)
+        {
+            Transform productTransform;
+            (productTransform = product.transform).SetParent(transform);
+            
+            Vector3 endPoint = new Vector3(
+                0f,
+                _intervalBetweenProducts * _products.Count,
+                0f);
+
+            productTransform.DOLocalMove(endPoint, GlobalSettings.TWEEN_DURATION);
+            productTransform.localRotation = Quaternion.identity;
+
+            OnProductPickup.Invoke();
+        }
 
         protected void GetFromPlatform(Platform platform)
         {
@@ -42,8 +63,10 @@ namespace Src.Product
             Product product = platform.Get();
 
             if (product == null) throw new Exception("Platform is empty");
+            
+            _products.Push(product);
 
-            MoveToSelf(product);
+            _pickupQueue.Add(MoveToSelfWithDelay(product));
         }
 
         protected void Deliver(Platform platform)
@@ -56,31 +79,11 @@ namespace Src.Product
             {
                 platform.Add(product);
             }
-            catch (WarningException e)
+            catch (Exception e)
             {
                 Debug.Log(e.Message);
                 _products.Push(product);
             }
-        }
-
-        private void MoveToSelf(Product product)
-        {
-            if (_products.Count >= _maxProductsCarried) return;
-
-            Transform productTransform;
-            (productTransform = product.transform).SetParent(transform);
-            
-            Vector3 endPoint = new Vector3(
-                0f, 
-                _intervalBetweenProducts * _products.Count,
-                0f);
-
-            productTransform.DOLocalMove(endPoint, _productPickupDelay);
-            productTransform.localRotation = Quaternion.identity;
-            
-            OnProductPickup.Invoke();
-
-            _products.Push(product);
         }
 
         public void Upgrade()

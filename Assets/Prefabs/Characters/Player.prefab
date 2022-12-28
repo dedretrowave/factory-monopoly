@@ -486,6 +486,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxProductsCarried: 4
   _intervalBetweenProducts: 0.5
+  _productPickupDelay: 0.1
   OnProductPickup:
     m_PersistentCalls:
       m_Calls: []

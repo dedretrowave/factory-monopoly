@@ -11,6 +11,12 @@ namespace Src.Clients
         [SerializeField] private Product.Product _moneyPrefab;
         [SerializeField] private Platform _moneyPlatform;
 
+        private new void Start()
+        {
+            base.Start();
+            OnProductPickup.AddListener(TransferMoneyToPlatform);
+        }
+
         public void SetDependencies(Platform moneyPlatform)
         {
             _moneyPlatform = moneyPlatform;
@@ -28,10 +34,7 @@ namespace Src.Clients
                     catch (Exception e)
                     {
                         Debug.Log(e.Message);
-                        return;
                     }
-                    
-                    TransferMoneyToPlatform();
                     break;
                 case PlatformType.Trash:
                     Deliver(platform);

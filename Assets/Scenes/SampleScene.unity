@@ -3930,6 +3930,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6755293973139241455, guid: 35356efaa79f5164a9f301fcb754f0ca, type: 3}
+      propertyPath: _productPickupDelay
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6755293973139241455, guid: 35356efaa79f5164a9f301fcb754f0ca, type: 3}
       propertyPath: _productPickupSpeed
       value: 1
       objectReference: {fileID: 0}

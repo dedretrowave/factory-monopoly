@@ -1,4 +1,4 @@
-﻿using System.ComponentModel;
+﻿using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -39,7 +39,7 @@ namespace Src.Player
             if (newMoney < 0)
             {
                 _currentMoney = 0;
-                throw new WarningException("Out Of Money");
+                throw new Exception("Out Of Money");
             }
 
             CurrentMoney = newMoney;

@@ -11,7 +11,6 @@ namespace Src.Misc
 
         public void Add(IEnumerator func)
         {
-            Debug.Log("NEW ITEM!");
             _queue.Enqueue(func);
 
             if (_queueExecution == null)
@@ -24,7 +23,6 @@ namespace Src.Misc
         {
             while (_queue.Count > 0)
             {
-                Debug.Log("QUEUE TICK");
                 yield return _queue.Dequeue();
             }
 
@@ -34,13 +32,11 @@ namespace Src.Misc
 
         public void Pause()
         {
-            Debug.Log("PAUSE");
             StopCoroutine(_queueExecution);
         }
 
         public void Continue()
         {
-            Debug.Log("CONTINUE");
             _queueExecution = StartCoroutine(ExecuteQueue());
         }
     }
