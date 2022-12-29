@@ -7623,7 +7623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfa45e66118f470c9aeb36c0f9167347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _clientSpawnPlacePrefab: {fileID: 5869496523884604219, guid: 5700a21fe12ec804baae92cdd42f3d57, type: 3}
+  _clientSpawnPlacePrefab: {fileID: 7067555434759770622, guid: 5700a21fe12ec804baae92cdd42f3d57, type: 3}
   _shopLevel: {fileID: 4343425320045976749}
   _points:
   - {fileID: 380451463567602284}

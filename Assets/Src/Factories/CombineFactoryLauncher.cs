@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using Src.Factories.Base;
 using Src.Misc;
 using Src.Platforms;
@@ -26,7 +27,10 @@ namespace Src.Factories
         private IEnumerator Combine()
         {
             Product.Product product = _inputPlatform.Get();
-            Destroy(product.gameObject);
+            DOTween.Sequence()
+                .Append(product.transform.DOMove(transform.position, GlobalSettings.TWEEN_DURATION))
+                .AppendCallback(() => Destroy(product.gameObject));
+
             yield return _factory.ProduceAfterTimeout();
         }
     }
