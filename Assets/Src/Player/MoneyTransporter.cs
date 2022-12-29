@@ -1,5 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
+using DG.Tweening;
+using Src.Misc;
 using Src.Platforms;
 using Src.Platforms.PlatformPoint;
 using Src.Product;
@@ -29,7 +31,12 @@ namespace Src.Player
                         return;
                     }
                     
-                    Destroy(money.gameObject);
+                    money.transform.SetParent(transform);
+                    
+                    DOTween.Sequence()
+                        .Append(money.transform.DOLocalMove(Vector3.zero, GlobalSettings.TWEEN_DURATION))
+                        .AppendCallback(() => Destroy(money.gameObject));
+                    
                     _wallet.Add();
                     OnMoneyPickup.Invoke();
                     break;
@@ -38,7 +45,7 @@ namespace Src.Player
                     {
                         _wallet.Reduce();
                     }
-                    catch (WarningException)
+                    catch (Exception)
                     {
                         return;
                     }

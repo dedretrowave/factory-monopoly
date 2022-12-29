@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
+using DG.Tweening;
+using Src.Misc;
 using Src.Platforms.PlatformPoint;
 using Src.Product;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 namespace Src.Platforms
 {
@@ -31,7 +31,7 @@ namespace Src.Platforms
         {
             if (product.Type != _acceptedProductType && _acceptedProductType != ProductType.Any)
             {
-                throw new WarningException("Product type doesn't match");
+                throw new Exception("Product type doesn't match");
             }
 
             PlatformPlace freePlace = GetFreePlace();
@@ -55,7 +55,7 @@ namespace Src.Platforms
                 OnFreeSpace.Invoke();
                 _isFull = false;
             }
-
+            
             return product;
         }
 
@@ -68,7 +68,7 @@ namespace Src.Platforms
         {
             Transform productTransform;
             (productTransform = product.transform).SetParent(freePlace.transform);
-            productTransform.localPosition = Vector3.zero;
+            productTransform.DOLocalMove(Vector3.zero, GlobalSettings.TWEEN_DURATION);
             productTransform.localRotation = Quaternion.identity;
             freePlace.Product = product;
             freePlace.IsOccupied = true;

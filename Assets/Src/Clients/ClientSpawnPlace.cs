@@ -6,7 +6,7 @@ namespace Src.Clients
 {
     public class ClientSpawnPlace : MonoBehaviour
     {
-        [SerializeField] private ClientProductTransporter _clientPrefab; 
+        [SerializeField] private Transform _clientPrefab; 
         
         private Platform _moneyPlatform;
         private Route _route;
@@ -16,9 +16,10 @@ namespace Src.Clients
         {
             if (_clientInstance == null)
             {
-                _clientInstance = Instantiate(_clientPrefab);
+                Transform newClient = Instantiate(_clientPrefab);
+                _clientInstance = newClient.GetComponentInChildren<ClientProductTransporter>();
                 _clientInstance.SetDependencies(_moneyPlatform);
-                _clientInstance.GetComponent<RouteMovement>().ApplyRoute(_route.GetRoute());
+                newClient.GetComponent<RouteMovement>().ApplyRoute(_route.GetRoute());
             }
         }
 

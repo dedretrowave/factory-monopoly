@@ -1,5 +1,78 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &518674033838523220
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3445033505105025882}
+  - component: {fileID: 5707650515102523271}
+  - component: {fileID: 275477299954369788}
+  m_Layer: 0
+  m_Name: ClientProductTransporter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3445033505105025882
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518674033838523220}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -8.67, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8189234836704384172}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5707650515102523271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518674033838523220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c954900a265f4e5592170e08e2ab3211, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxProductsCarried: 2
+  _intervalBetweenProducts: 1
+  OnProductPickup:
+    m_PersistentCalls:
+      m_Calls: []
+  _moneyPrefab: {fileID: 1477705308802538874, guid: 6c99240a19dac524f933a036a7c39116, type: 3}
+  _moneyPlatform: {fileID: 0}
+--- !u!65 &275477299954369788
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518674033838523220}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5, y: 2.26, z: 4.28}
+  m_Center: {x: 0, y: 9.76, z: -4.73}
 --- !u!1 &4335092929758953697
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,8 +231,6 @@ GameObject:
   - component: {fileID: 8189234836704384172}
   - component: {fileID: 8189234836704384146}
   - component: {fileID: 8189234836704384145}
-  - component: {fileID: 2245922049548236065}
-  - component: {fileID: 197552573339187787}
   m_Layer: 0
   m_Name: Client
   m_TagString: Untagged
@@ -180,6 +251,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8193960105612243967}
+  - {fileID: 3445033505105025882}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -195,7 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901d09e185fa49cca268e95961cef166, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 45
+  _speed: 10
 --- !u!114 &8189234836704384145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,43 +283,3 @@ MonoBehaviour:
   _movement: {fileID: 8189234836704384146}
   _rotationDistance: 1
   _points: []
---- !u!65 &2245922049548236065
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8189234836704384173}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 5, y: 2.26, z: 4.28}
-  m_Center: {x: 0, y: 0, z: -4.73}
---- !u!114 &197552573339187787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8189234836704384173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c954900a265f4e5592170e08e2ab3211, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxProductsCarried: 2
-  _intervalBetweenProducts: 1
-  OnProductPickup:
-    m_PersistentCalls:
-      m_Calls: []
-  _moneyPrefab: {fileID: 1477705308802538874, guid: 6c99240a19dac524f933a036a7c39116, type: 3}
-  _moneyPlatform: {fileID: 0}

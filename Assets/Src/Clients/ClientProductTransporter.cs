@@ -1,4 +1,5 @@
-﻿using Src.Platforms;
+﻿using System;
+using Src.Platforms;
 using Src.Platforms.PlatformPoint;
 using Src.Product;
 using UnityEngine;
@@ -10,6 +11,12 @@ namespace Src.Clients
         [SerializeField] private Product.Product _moneyPrefab;
         [SerializeField] private Platform _moneyPlatform;
 
+        private new void Start()
+        {
+            base.Start();
+            OnProductPickup.AddListener(TransferMoneyToPlatform);
+        }
+
         public void SetDependencies(Platform moneyPlatform)
         {
             _moneyPlatform = moneyPlatform;
@@ -20,9 +27,14 @@ namespace Src.Clients
             switch (platform.Type)
             {
                 case PlatformType.Shop:
-                    Product.Product product = GetFromPlatform(platform);
-                    if (product == null) return;
-                    TransferMoneyToPlatform();
+                    try
+                    {
+                        GetFromPlatform(platform);
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.Log(e.Message);
+                    }
                     break;
                 case PlatformType.Trash:
                     Deliver(platform);

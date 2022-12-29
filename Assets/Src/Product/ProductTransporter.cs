@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using DG.Tweening;
+using Src.Misc;
 using Src.Platforms;
 using UnityEngine;
 using UnityEngine.Events;
@@ -12,10 +15,16 @@ namespace Src.Product
         [SerializeField] private float _intervalBetweenProducts = 1f;
 
         private Stack<Product> _products = new();
-        
+        private ExecutionQueue _pickupQueue;
+
         public UnityEvent OnProductPickup;
 
         protected abstract void InteractWithPlatform(Platform platform);
+
+        protected void Start()
+        {
+            _pickupQueue = gameObject.AddComponent<ExecutionQueue>();
+        }
 
         private void OnTriggerStay(Collider other)
         {
@@ -23,19 +32,41 @@ namespace Src.Product
             
             InteractWithPlatform(platform);
         }
-
-        protected Product GetFromPlatform(Platform platform)
+        
+        private IEnumerator MoveToSelfWithDelay(Product product)
         {
-            if (_products.Count >= _maxProductsCarried) return null;
+            MoveToSelf(product);
+
+            yield return new WaitForSeconds(GlobalSettings.TWEEN_DURATION);
+        }
+        
+        private void MoveToSelf(Product product)
+        {
+            Transform productTransform;
+            (productTransform = product.transform).SetParent(transform);
+            
+            Vector3 endPoint = new Vector3(
+                0f,
+                _intervalBetweenProducts * _products.Count,
+                0f);
+
+            productTransform.DOLocalMove(endPoint, GlobalSettings.TWEEN_DURATION);
+            productTransform.localRotation = Quaternion.identity;
+
+            OnProductPickup.Invoke();
+        }
+
+        protected void GetFromPlatform(Platform platform)
+        {
+            if (_products.Count >= _maxProductsCarried) throw new Exception("Too much products");
             
             Product product = platform.Get();
 
-            if (product == null) return null;
+            if (product == null) throw new Exception("Platform is empty");
             
-            OnProductPickup.Invoke();
-            MoveToSelf(product);
+            _products.Push(product);
 
-            return product;
+            _pickupQueue.Add(MoveToSelfWithDelay(product));
         }
 
         protected void Deliver(Platform platform)
@@ -48,23 +79,11 @@ namespace Src.Product
             {
                 platform.Add(product);
             }
-            catch (WarningException e)
+            catch (Exception e)
             {
                 Debug.Log(e.Message);
                 _products.Push(product);
             }
-        }
-
-        private void MoveToSelf(Product product)
-        {
-            if (_products.Count >= _maxProductsCarried) return;
-
-            Transform productTransform;
-            (productTransform = product.transform).SetParent(transform);
-            productTransform.localPosition = new Vector3(0f, _intervalBetweenProducts * _products.Count, 0f);
-            productTransform.localRotation = Quaternion.identity;
-
-            _products.Push(product);
         }
 
         public void Upgrade()

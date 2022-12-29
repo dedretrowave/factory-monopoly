@@ -130,6 +130,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxProductsCarried: 0
   _intervalBetweenProducts: 1
+  _productPickupDelay: 0.05
+  OnProductPickup:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!135 &3807044943276816250
 SphereCollider:
   m_ObjectHideFlags: 0
