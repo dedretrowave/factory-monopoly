@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e5c43cbd6854370868c3913162888c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _itemPickupSound: {fileID: 8300000, guid: 291dc9870d12fdb468943b404e2a6d08, type: 3}
+  _itemPickupSound: {fileID: 8300000, guid: 65ccd5c62c05a2145a3f520287af0efb, type: 3}
   _moneyPickupSound: {fileID: 8300000, guid: d6207668ce9ba684c8fcfd2949866332, type: 3}
   _productTransporter: {fileID: 6755293973139241455}
   _moneyTransporter: {fileID: 4349308777749918704}
@@ -486,7 +486,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxProductsCarried: 4
   _intervalBetweenProducts: 0.5
-  _productPickupDelay: 0.1
   OnProductPickup:
     m_PersistentCalls:
       m_Calls: []
