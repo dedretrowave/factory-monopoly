@@ -1803,6 +1803,10 @@ PrefabInstance:
       value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1418196959593713512, guid: 80e92ca7968395c489ab8736a4f2e05f, type: 3}
+      propertyPath: _levelZeroDisabledComponents.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1418196959593713512, guid: 80e92ca7968395c489ab8736a4f2e05f, type: 3}
       propertyPath: _levelZeroDisabledComponents.Array.data[4]
       value: 
       objectReference: {fileID: 2070091143}

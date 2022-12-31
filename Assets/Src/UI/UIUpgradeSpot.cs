@@ -12,6 +12,7 @@ namespace Src.UI
         private void Start()
         {
             _upgradeSpot.OnPriceChange.AddListener(UpdatePrice);
+            UpdatePrice(_upgradeSpot.CostOfUpgrade);
         }
 
         private void UpdatePrice(float newPrice)

@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using Src.Platforms;
+﻿using Src.Platforms;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 namespace Src.Leveling
 {
@@ -15,6 +13,8 @@ namespace Src.Leveling
         private float _moneyTransferred;
 
         [HideInInspector] public UnityEvent<float> OnPriceChange;
+
+        public float CostOfUpgrade => _costOfUpgrade;
 
         private void Start()
         {
