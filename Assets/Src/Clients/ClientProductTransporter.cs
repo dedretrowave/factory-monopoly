@@ -46,10 +46,13 @@ namespace Src.Clients
             }
         }
 
-        private void TransferMoneyToPlatform()
+        private void TransferMoneyToPlatform(Product.Product product)
         {
-            Product.Product money = Instantiate(_moneyPrefab, transform);
-            _moneyPlatform.Add(money);
+            for (var i = 0; i < product.Price; i++)
+            {
+                Product.Product money = Instantiate(_moneyPrefab, transform);
+                _moneyPlatform.Add(money);
+            }
         }
     }
 }

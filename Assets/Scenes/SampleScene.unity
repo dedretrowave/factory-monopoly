@@ -521,6 +521,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4045235627102431014, guid: 80e92ca7968395c489ab8736a4f2e05f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 4045235627742771077, guid: 80e92ca7968395c489ab8736a4f2e05f, type: 3}
       propertyPath: _acceptedProductType
       value: 2
@@ -1930,6 +1934,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 4.1
       objectReference: {fileID: 0}
+    - target: {fileID: 1606068819762072295, guid: 80e92ca7968395c489ab8736a4f2e05f, type: 3}
+      propertyPath: _costOfUpgrade
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1606068819762072295, guid: 80e92ca7968395c489ab8736a4f2e05f, type: 3}
+      propertyPath: _riseOfUpgradeCost
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1865271413602502450, guid: 80e92ca7968395c489ab8736a4f2e05f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2070,6 +2082,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4045235627102431014, guid: 80e92ca7968395c489ab8736a4f2e05f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.18
+      objectReference: {fileID: 0}
     - target: {fileID: 4045235627742771077, guid: 80e92ca7968395c489ab8736a4f2e05f, type: 3}
       propertyPath: _acceptedProductType
       value: 3
@@ -2082,6 +2098,14 @@ PrefabInstance:
       propertyPath: _objects.Array.data[0]
       value: 
       objectReference: {fileID: 904859987}
+    - target: {fileID: 5028381481256287887, guid: 80e92ca7968395c489ab8736a4f2e05f, type: 3}
+      propertyPath: _costOfUpgrade
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028381481256287887, guid: 80e92ca7968395c489ab8736a4f2e05f, type: 3}
+      propertyPath: _riseOfUpgradeCost
+      value: 1.25
+      objectReference: {fileID: 0}
     - target: {fileID: 5092075498288380495, guid: 80e92ca7968395c489ab8736a4f2e05f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2879,6 +2903,14 @@ PrefabInstance:
       propertyPath: _level
       value: 
       objectReference: {fileID: 1278343845}
+    - target: {fileID: 4574271592435062117, guid: 04e69469f7462ad4cbb50a4ac744e376, type: 3}
+      propertyPath: _costOfUpgrade
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4574271592435062117, guid: 04e69469f7462ad4cbb50a4ac744e376, type: 3}
+      propertyPath: _riseOfUpgradeCost
+      value: 1.25
+      objectReference: {fileID: 0}
     - target: {fileID: 4631273804456066235, guid: 04e69469f7462ad4cbb50a4ac744e376, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.2786722
@@ -2919,6 +2951,14 @@ PrefabInstance:
       propertyPath: _level
       value: 
       objectReference: {fileID: 2070091144}
+    - target: {fileID: 6339850167560264859, guid: 04e69469f7462ad4cbb50a4ac744e376, type: 3}
+      propertyPath: _costOfUpgrade
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6339850167560264859, guid: 04e69469f7462ad4cbb50a4ac744e376, type: 3}
+      propertyPath: _riseOfUpgradeCost
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7766756254307519190, guid: 04e69469f7462ad4cbb50a4ac744e376, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3525,6 +3565,14 @@ PrefabInstance:
       propertyPath: _level
       value: 
       objectReference: {fileID: 1080529308}
+    - target: {fileID: 1606068819762072295, guid: 80e92ca7968395c489ab8736a4f2e05f, type: 3}
+      propertyPath: _costOfUpgrade
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1606068819762072295, guid: 80e92ca7968395c489ab8736a4f2e05f, type: 3}
+      propertyPath: _riseOfUpgradeCost
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1865271413602502450, guid: 80e92ca7968395c489ab8736a4f2e05f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3673,6 +3721,14 @@ PrefabInstance:
       propertyPath: _objects.Array.data[0]
       value: 
       objectReference: {fileID: 1645107428}
+    - target: {fileID: 5028381481256287887, guid: 80e92ca7968395c489ab8736a4f2e05f, type: 3}
+      propertyPath: _costOfUpgrade
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028381481256287887, guid: 80e92ca7968395c489ab8736a4f2e05f, type: 3}
+      propertyPath: _riseOfUpgradeCost
+      value: 1.25
+      objectReference: {fileID: 0}
     - target: {fileID: 5092075498288380495, guid: 80e92ca7968395c489ab8736a4f2e05f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3905,6 +3961,14 @@ PrefabInstance:
       propertyPath: _level
       value: 
       objectReference: {fileID: 1617800460}
+    - target: {fileID: 4574271592435062117, guid: 04e69469f7462ad4cbb50a4ac744e376, type: 3}
+      propertyPath: _costOfUpgrade
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4574271592435062117, guid: 04e69469f7462ad4cbb50a4ac744e376, type: 3}
+      propertyPath: _riseOfUpgradeCost
+      value: 1.25
+      objectReference: {fileID: 0}
     - target: {fileID: 4631273804456066235, guid: 04e69469f7462ad4cbb50a4ac744e376, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.2786722
@@ -3941,6 +4005,14 @@ PrefabInstance:
       propertyPath: _level
       value: 
       objectReference: {fileID: 1776051606}
+    - target: {fileID: 6339850167560264859, guid: 04e69469f7462ad4cbb50a4ac744e376, type: 3}
+      propertyPath: _costOfUpgrade
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6339850167560264859, guid: 04e69469f7462ad4cbb50a4ac744e376, type: 3}
+      propertyPath: _riseOfUpgradeCost
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7766756254307519190, guid: 04e69469f7462ad4cbb50a4ac744e376, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -4160,6 +4232,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 630fe2e1fbf4df74e814305da6b4ea86, type: 2}
+    - target: {fileID: 8432544525191853879, guid: 06e36db9e0c3544418aa4559dfa58da6, type: 3}
+      propertyPath: _riseOfUpgradeCost
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8851401387948556575, guid: 06e36db9e0c3544418aa4559dfa58da6, type: 3}
       propertyPath: m_RootOrder
       value: 0

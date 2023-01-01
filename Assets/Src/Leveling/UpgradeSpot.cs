@@ -8,6 +8,7 @@ namespace Src.Leveling
     {
         [SerializeField] private Platform _platform;
         [SerializeField] private float _costOfUpgrade;
+        [SerializeField] private float _riseOfUpgradeCost = 1.5f;
         [SerializeField] private Level _level;
 
         private float _moneyTransferred;
@@ -38,7 +39,7 @@ namespace Src.Leveling
             if (_moneyTransferred >= _costOfUpgrade)
             {
                 _level.Upgrade();
-                _costOfUpgrade *= 1.5f;
+                _costOfUpgrade *= _riseOfUpgradeCost;
                 _moneyTransferred = 0f;
             }
             

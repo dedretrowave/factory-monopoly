@@ -25,8 +25,6 @@ namespace Src.ProductTransporting
 
         private void FixedUpdate()
         {
-            Debug.Log(Vector3.Distance(transform.position, _points[_endPointIndex].position));
-            
             if (Vector3.Distance(transform.position, _points[_endPointIndex].position) <= _rotationDistance)
             {
                 _movement.Rotate(_direction);
@@ -46,8 +44,6 @@ namespace Src.ProductTransporting
             {
                 _endPointIndex = 0;
             }
-            
-            Debug.Log((_points[_endPointIndex].position - _points[_startPointIndex].position).normalized);
 
             _direction = (_points[_endPointIndex].position - _points[_startPointIndex].position).normalized;
         }

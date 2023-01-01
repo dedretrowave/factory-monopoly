@@ -19,7 +19,7 @@ namespace Src.Sounds
             _moneyTransporter.OnMoneyPickup.AddListener(PlayMoneyPickup);
         }
 
-        private void PlayProductPickup()
+        private void PlayProductPickup(Product.Product _)
         {
             SetAudioClipAndPlay(_itemPickupSound);
         }

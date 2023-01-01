@@ -17,7 +17,7 @@ namespace Src.Product
         private Stack<Product> _products = new();
         private ExecutionQueue _pickupQueue;
 
-        public UnityEvent OnProductPickup;
+        public UnityEvent<Product> OnProductPickup;
 
         protected abstract void InteractWithPlatform(Platform platform);
 
@@ -33,27 +33,27 @@ namespace Src.Product
             InteractWithPlatform(platform);
         }
         
-        private IEnumerator MoveToSelfWithDelay(Product product)
+        private IEnumerator MoveToSelfWithDelay(Product product, int index)
         {
-            MoveToSelf(product);
+            MoveToSelf(product, index);
 
             yield return new WaitForSeconds(GlobalSettings.TWEEN_DURATION);
         }
         
-        private void MoveToSelf(Product product)
+        private void MoveToSelf(Product product, int index)
         {
             Transform productTransform;
             (productTransform = product.transform).SetParent(transform);
             
             Vector3 endPoint = new Vector3(
                 0f,
-                _intervalBetweenProducts * _products.Count,
+                _intervalBetweenProducts * index,
                 0f);
 
             productTransform.DOLocalMove(endPoint, GlobalSettings.TWEEN_DURATION);
             productTransform.localRotation = Quaternion.identity;
 
-            OnProductPickup.Invoke();
+            OnProductPickup.Invoke(product);
         }
 
         protected void GetFromPlatform(Platform platform)
@@ -66,7 +66,7 @@ namespace Src.Product
             
             _products.Push(product);
 
-            _pickupQueue.Add(MoveToSelfWithDelay(product));
+            _pickupQueue.Add(MoveToSelfWithDelay(product, _products.Count));
         }
 
         protected void Deliver(Platform platform)
