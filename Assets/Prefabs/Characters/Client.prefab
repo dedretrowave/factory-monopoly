@@ -72,7 +72,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 5, y: 2.26, z: 4.28}
-  m_Center: {x: 0, y: 9.76, z: -4.73}
+  m_Center: {x: 0, y: 9.76, z: -3.36}
 --- !u!1 &4335092929758953697
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,5 +281,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movement: {fileID: 8189234836704384146}
-  _rotationDistance: 1
+  _rotationDistance: 1.5
   _points: []
