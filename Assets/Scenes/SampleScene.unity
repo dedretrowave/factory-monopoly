@@ -2481,7 +2481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MovementRange: 50
-  m_ControlPath: <AndroidJoystick>/stick
+  m_ControlPath: <Joystick>/stick
 --- !u!222 &1765633775
 CanvasRenderer:
   m_ObjectHideFlags: 0

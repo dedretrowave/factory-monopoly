@@ -52,7 +52,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""left"",
                     ""id"": ""afe1cd75-45a4-4b7f-8efc-113b2b4920c0"",
-                    ""path"": ""<AndroidJoystick>/stick/left"",
+                    ""path"": ""<Joystick>/stick/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -63,7 +63,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""right"",
                     ""id"": ""3444f772-155f-41a8-8c66-6190bbb3adb9"",
-                    ""path"": ""<AndroidJoystick>/stick/right"",
+                    ""path"": ""<Joystick>/stick/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -74,7 +74,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""forward"",
                     ""id"": ""2123f09b-445f-4185-ba8b-5ef79fd2a5c9"",
-                    ""path"": ""<AndroidJoystick>/stick/up"",
+                    ""path"": ""<Joystick>/stick/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -85,7 +85,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""backward"",
                     ""id"": ""7ab88d7a-68f9-4287-95f6-cc412ccdda79"",
-                    ""path"": ""<AndroidJoystick>/stick/down"",
+                    ""path"": ""<Joystick>/stick/down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
