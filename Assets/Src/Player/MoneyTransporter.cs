@@ -1,9 +1,9 @@
 ﻿using System;
 using System.ComponentModel;
 using DG.Tweening;
-using Src.Misc;
-using Src.Platforms;
-using Src.Platforms.PlatformPoint;
+using Src.Buildings.Platforms;
+using Src.Buildings.Platforms.PlatformPlace;
+using Src.Helpers;
 using Src.Product;
 using UnityEngine;
 using UnityEngine.Events;

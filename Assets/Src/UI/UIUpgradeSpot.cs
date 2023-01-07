@@ -1,4 +1,4 @@
-using Src.Leveling;
+using Src.Buildings.Leveling;
 using TMPro;
 using UnityEngine;
 

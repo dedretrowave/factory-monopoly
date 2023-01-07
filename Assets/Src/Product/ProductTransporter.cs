@@ -2,8 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
-using Src.Misc;
-using Src.Platforms;
+using Src.Buildings.Platforms;
+using Src.Helpers;
 using UnityEngine;
 using UnityEngine.Events;
 

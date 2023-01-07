@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Src.Movement
 {
-    public class PhysicsMovement : Movement
+    public class PhysicsMovement : Base.Movement
     {
         [SerializeField] private Rigidbody _rigidbody;
         
