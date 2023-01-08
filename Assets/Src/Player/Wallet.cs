@@ -1,4 +1,5 @@
 ﻿using System;
+using Src.Save;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -23,13 +24,25 @@ namespace Src.Player
 
         private void Start()
         {
-            CurrentMoney = _startingMoney;
+            int moneyFromSave = SaveSystem.Instance.GetMoney();
+
+            if (moneyFromSave <= 0)
+            {
+                _currentMoney = _startingMoney;
+            }
+            else
+            {
+                _currentMoney = moneyFromSave;
+            }
+            
             OnMoneyChange.Invoke(CurrentMoney);
         }
 
         public void Add(int amount = 1)
         {
             CurrentMoney += amount;
+            
+            SaveSystem.Instance.SaveMoney(CurrentMoney);
         }
 
         public void Reduce(int amount = 1)
@@ -43,6 +56,8 @@ namespace Src.Player
             }
 
             CurrentMoney = newMoney;
+            
+            SaveSystem.Instance.SaveMoney(CurrentMoney);
         }
     }
 }
