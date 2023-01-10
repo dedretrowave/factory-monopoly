@@ -1,5 +1,4 @@
 using System;
-using System.IO;
 using System.Runtime.InteropServices;
 using Newtonsoft.Json;
 using UnityEngine;
@@ -11,29 +10,20 @@ namespace Src.Save
         private PlayerData _data;
         private static SaveSystem _instance;
 
-        public static SaveSystem Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = new SaveSystem();
-                }
+        public static SaveSystem Instance => _instance ??= new SaveSystem();
 
-                return _instance;
-            }
-        }
-
-        private SaveSystem()
-        {
-            Load();
-        }
-        
         [DllImport("__Internal")]
         private static extern void SaveExtern(string data);
         
         [DllImport("__Internal")]
-        private static extern string LoadExtern();
+        private static extern void LoadExtern();
+
+        private SaveSystem()
+        {
+#if UNITY_WEBGL
+            LoadExtern();      
+#endif
+        }
 
         public void SaveMoney(int amount)
         {
@@ -52,10 +42,6 @@ namespace Src.Save
         public void SaveBuilding(int id, int level)
         {
             _data.AddBuilding(id, level);
-            foreach (var playerDataBuildingsLevel in _data.BuildingsLevels)
-            {
-                Debug.Log($"{playerDataBuildingsLevel.Id} : {playerDataBuildingsLevel.Level}");
-            }
             Save();
         }
         
@@ -67,15 +53,12 @@ namespace Src.Save
         private void Save()
         {
             string json = JsonConvert.SerializeObject(_data);
-            SaveExtern(json);
+#if UNITY_WEBGL
+            SaveExtern(json);      
+#endif
         }
 
-        private void Load()
-        {
-            SetPlayerData(LoadExtern());
-        }
-
-        private void SetPlayerData(string value)
+        public void SetPlayerData(string value)
         {
             PlayerData playerData = JsonConvert.DeserializeObject<PlayerData>(value);
 
