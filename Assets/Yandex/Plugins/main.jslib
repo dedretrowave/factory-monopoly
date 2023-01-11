@@ -10,5 +10,5 @@ mergeInto(LibraryManager.library, {
         const json = JSON.stringify(data);
         myGameInstance.SendMessage("SaveSystem", "SetPlayerData", json);
     })
-  }
+  },
 });

@@ -14,7 +14,7 @@ namespace Src.Characters.Carrier
 
         public void SetDependencies(List<Transform> points)
         {
-            _routeMovement.ApplyRoute(points);
+            _routeMovement.ApplyRoute(points, Vector3.zero);
         }
 
         public void Upgrade()

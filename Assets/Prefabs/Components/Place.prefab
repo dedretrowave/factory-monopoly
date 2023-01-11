@@ -31,7 +31,7 @@ Transform:
   m_Children:
   - {fileID: 5131605498401871895}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7067555434759770622
 MonoBehaviour:
@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _clientPrefab: {fileID: 8189234836704384172, guid: 040ea25a88d9fda47bc3b37164edba4a, type: 3}
+  _spawnOffset: 5
 --- !u!1 &2008551469907647447
 GameObject:
   m_ObjectHideFlags: 0

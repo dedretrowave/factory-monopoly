@@ -23,6 +23,8 @@ namespace Src.Characters.Spawners
             if (_carrierInstance == null)
             {
                 _carrierInstance = Instantiate(_carrierPrefab);
+                var transformPosition = _carrierInstance.transform.position;
+                transformPosition.y = 0f;
                 _carrierInstance.SetDependencies(_route.GetRoute());
             }
         }

@@ -1,4 +1,4 @@
-using System;
+using System.IO;
 using System.Runtime.InteropServices;
 using Newtonsoft.Json;
 using UnityEngine;
@@ -14,14 +14,35 @@ namespace Src.Save
 
         [DllImport("__Internal")]
         private static extern void SaveExtern(string data);
+
+        private void SaveInternal(string data)
+        {
+            File.WriteAllText($"{Application.persistentDataPath}/save.dat", data);
+        }
         
         [DllImport("__Internal")]
         private static extern void LoadExtern();
 
+        private void LoadInternal()
+        {
+            if (!File.Exists($"{Application.persistentDataPath}/save.dat"))
+            {
+                File.Create($"{Application.persistentDataPath}/save.dat");
+            }
+            
+            string serializedData = File.ReadAllText($"{Application.persistentDataPath}/save.dat");
+
+            PlayerData deserializedData = JsonConvert.DeserializeObject<PlayerData>(serializedData);
+
+            _data = deserializedData ?? new PlayerData();
+        }
+
         private SaveSystem()
         {
-#if UNITY_WEBGL
+#if !UNITY_EDITOR && UNITY_WEBGL
             LoadExtern();      
+#else
+            LoadInternal();
 #endif
         }
 
@@ -53,8 +74,10 @@ namespace Src.Save
         private void Save()
         {
             string json = JsonConvert.SerializeObject(_data);
-#if UNITY_WEBGL
-            SaveExtern(json);      
+#if !UNITY_EDITOR && UNITY_WEBGL
+            SaveExtern(json);
+#else
+            SaveInternal(json);
 #endif
         }
 

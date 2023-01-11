@@ -6,12 +6,12 @@ namespace Src.Save
     [Serializable]
     public class BuildingLevel
     {
-        public int Id;
+        public string Id;
         public int Level;
 
         public BuildingLevel(int id, int level)
         {
-            Id = id;
+            Id = id.ToString();
             Level = level;
         }
     }
@@ -33,7 +33,7 @@ namespace Src.Save
         {
             BuildingLevel buildingLevel = new BuildingLevel(id, level);
 
-            BuildingLevel buildingInArray = BuildingsLevels.Find(building => building.Id == id);
+            BuildingLevel buildingInArray = BuildingsLevels.Find(building => building.Id.Equals(id.ToString()));
 
             if (buildingInArray != null)
             {
@@ -46,7 +46,7 @@ namespace Src.Save
 
         public int GetBuildingLevelById(int id)
         {
-            BuildingLevel buildingInArray = BuildingsLevels.Find(building => building.Id == id);
+            BuildingLevel buildingInArray = BuildingsLevels.Find(building => building.Id.Equals(id.ToString()));
 
             return buildingInArray != null ? buildingInArray.Level : 0;
         }

@@ -15,11 +15,11 @@ namespace Src.Characters
         private int _startPointIndex = 0;
         private int _endPointIndex = 1;
 
-        public void ApplyRoute(List<Transform> route)
+        public void ApplyRoute(List<Transform> route, Vector3 startPosition)
         {
             _points = route;
             
-            transform.position = _points[_startPointIndex].position;
+            transform.position = startPosition != Vector3.zero ? startPosition : _points[_startPointIndex].position;
 
             _direction = (_points[_endPointIndex].position - _points[_startPointIndex].position).normalized;
         }
