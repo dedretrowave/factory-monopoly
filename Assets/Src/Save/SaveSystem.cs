@@ -5,12 +5,12 @@ using UnityEngine;
 
 namespace Src.Save
 {
-    public class SaveSystem
+    public class SaveSystem : MonoBehaviour
     {
         private PlayerData _data;
         private static SaveSystem _instance;
 
-        public static SaveSystem Instance => _instance ??= new SaveSystem();
+        public static SaveSystem Instance => _instance;
 
         [DllImport("__Internal")]
         private static extern void SaveExtern(string data);
@@ -37,9 +37,11 @@ namespace Src.Save
             _data = deserializedData ?? new PlayerData();
         }
 
-        private SaveSystem()
+        private void Awake()
         {
+            _instance = this;
 #if !UNITY_EDITOR && UNITY_WEBGL
+Debug.Log("NOT UNITY");
             LoadExtern();      
 #else
             LoadInternal();

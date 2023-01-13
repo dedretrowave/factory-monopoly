@@ -6,8 +6,8 @@ mergeInto(LibraryManager.library, {
   },
   
   LoadExtern: function() {
-    player.getData().then(data => {
-        const json = JSON.stringify(data);
+    player.getData().then(_data => {
+        const json = JSON.stringify(_data);
         myGameInstance.SendMessage("SaveSystem", "SetPlayerData", json);
     })
   },

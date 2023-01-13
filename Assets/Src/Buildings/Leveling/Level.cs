@@ -7,9 +7,9 @@ namespace Src.Buildings.Leveling
     public class Level : MonoBehaviour
     {
         [SerializeField] private int _maxLevel;
+        [SerializeField] private int _id;
         
         private int _currentLevel = 0;
-        private int _id;
 
         public UnityEvent OnUpgrade;
         public UnityEvent OnLevelZeroBypassed;
@@ -19,18 +19,11 @@ namespace Src.Buildings.Leveling
 
         private void Start()
         {
-            _id = gameObject.GetInstanceID();
-
             int levelFromSave = SaveSystem.Instance.GetBuildingLevel(_id);
-
-            if (levelFromSave > 0)
-            {
-                OnLevelZeroBypassed.Invoke();
-
-                for (int i = 0; i < levelFromSave; i++)
-                {
-                    Upgrade();
-                }
+            
+            for (int i = 0; i < levelFromSave; i++) 
+            { 
+                Upgrade();
             }
         }
 

@@ -17,7 +17,7 @@ namespace Src.Characters.Spawners
 
         private int _objectsSpawned;
 
-        private void Start()
+        private void Awake()
         {
             _shopLevel.OnUpgrade.AddListener(Spawn);
         }
