@@ -33,7 +33,9 @@ namespace Src.Buildings.Leveling
             
             int newLevel = _currentLevel + 1;
 
-            if (newLevel >= _maxLevel)
+            if (newLevel > _maxLevel) return;
+
+            if (newLevel == _maxLevel)
             {
                 _currentLevel = _maxLevel;
                 OnUpgrade.Invoke();

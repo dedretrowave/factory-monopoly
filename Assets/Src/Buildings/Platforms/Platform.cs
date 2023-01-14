@@ -29,19 +29,21 @@ namespace Src.Buildings.Platforms
 
         public void Add(Product.Product product)
         {
+            if (_isFull) return;
+            
             if (product.Type != _acceptedProductType && _acceptedProductType != ProductType.Any)
             {
                 throw new Exception("Product type doesn't match");
             }
 
-            Buildings.Platforms.PlatformPlace.PlatformPlace freePlace = GetFreePlace();
+            var freePlace = GetFreePlace();
 
             Place(product, freePlace);
         }
 
         public Product.Product Get()
         {
-            Buildings.Platforms.PlatformPlace.PlatformPlace place = _places.Find(place => place.IsOccupied);
+            var place = _places.Find(place => place.IsOccupied);
 
             if (place == null) return null;
 

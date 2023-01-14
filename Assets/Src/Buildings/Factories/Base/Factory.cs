@@ -18,9 +18,9 @@ namespace Src.Buildings.Factories.Base
 
         private void Start()
         {
-            _level.OnUpgrade.AddListener(Upgrade);
-            
             _productionTimeSpan = _defaultProductionTimeSpan;
+            
+            _level.OnUpgrade.AddListener(Upgrade);
         }
 
         private void Upgrade()
