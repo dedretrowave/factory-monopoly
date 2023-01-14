@@ -856,6 +856,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _platform: {fileID: 3009712954177173822}
   _costOfUpgrade: 15
+  _riseOfUpgradeCost: 1.25
   _level: {fileID: 0}
   OnPriceChange:
     m_PersistentCalls:

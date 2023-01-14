@@ -267,4 +267,4 @@ MonoBehaviour:
   _routeMovement: {fileID: 3807044944933974847}
   _movement: {fileID: 3807044944933974846}
   _defaultProductTransporter: {fileID: 3807044943276816249}
-  _speedByLevelIncrease: 1.5
+  _speedByLevelIncrease: 1.15

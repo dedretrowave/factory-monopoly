@@ -22,7 +22,7 @@ namespace Src.Buildings.Leveling
             int levelFromSave = SaveSystem.Instance.GetBuildingLevel(_id);
             
             for (int i = 0; i < levelFromSave; i++) 
-            { 
+            {
                 Upgrade();
             }
         }

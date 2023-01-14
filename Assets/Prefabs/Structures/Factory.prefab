@@ -1432,6 +1432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _platform: {fileID: 4548213462098010186}
   _costOfUpgrade: 30
+  _riseOfUpgradeCost: 1.5
   _level: {fileID: 5806752912301010847}
   OnPriceChange:
     m_PersistentCalls:
@@ -2830,7 +2831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82c9380a83c646328bc7271329d784ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultProductionTimeSpan: 1
+  _defaultProductionTimeSpan: 2.5
   _productionTimeByLevelReduction: 2
   _level: {fileID: 5806752912301010847}
   _outputPlatform: {fileID: 5806752912311282706}
@@ -2848,6 +2849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxLevel: 5
+  _id: 0
   OnUpgrade:
     m_PersistentCalls:
       m_Calls: []

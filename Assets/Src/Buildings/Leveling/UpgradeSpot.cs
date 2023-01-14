@@ -1,4 +1,5 @@
-﻿using Src.Buildings.Platforms;
+﻿using System;
+using Src.Buildings.Platforms;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,7 +8,7 @@ namespace Src.Buildings.Leveling
     public class UpgradeSpot : MonoBehaviour
     {
         [SerializeField] private Platform _platform;
-        [SerializeField] private float _costOfUpgrade;
+        [SerializeField] private int _costOfUpgrade;
         [SerializeField] private float _riseOfUpgradeCost = 1.5f;
         [SerializeField] private Level _level;
 
@@ -21,6 +22,7 @@ namespace Src.Buildings.Leveling
         {
             _platform.OnPlace.AddListener(Upgrade);
             _level.OnMaxLevelReached.AddListener(Remove);
+            _level.OnUpgrade.AddListener(IncreasePrice);
             OnPriceChange.Invoke(_costOfUpgrade);
         }
 
@@ -39,10 +41,16 @@ namespace Src.Buildings.Leveling
             if (_moneyTransferred >= _costOfUpgrade)
             {
                 _level.Upgrade();
-                _costOfUpgrade *= _riseOfUpgradeCost;
-                _moneyTransferred = 0f;
+                return;
             }
             
+            OnPriceChange.Invoke(_costOfUpgrade - _moneyTransferred);
+        }
+
+        private void IncreasePrice()
+        {
+            _costOfUpgrade = Mathf.RoundToInt(_costOfUpgrade * _riseOfUpgradeCost);
+            _moneyTransferred = 0f;
             OnPriceChange.Invoke(_costOfUpgrade - _moneyTransferred);
         }
     }
