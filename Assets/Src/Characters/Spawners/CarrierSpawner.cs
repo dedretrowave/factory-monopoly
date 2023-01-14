@@ -12,7 +12,7 @@ namespace Src.Characters.Spawners
 
         private CarrierLeveling _carrierInstance;
 
-        private void Start()
+        private void Awake()
         {
             _level.OnLevelZeroBypassed.AddListener(Create);
             _level.OnUpgrade.AddListener(Upgrade);

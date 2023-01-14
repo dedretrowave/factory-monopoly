@@ -1,14 +1,12 @@
 ﻿using System.Collections.Generic;
-using Src.Buildings.Leveling;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Src.Buildings.Leveling
 {
     public class StateByLevelChanger : MonoBehaviour
     {
         [SerializeField] private Level _level;
-        [SerializeField] [Tooltip("Components To Enable After Level 1")] 
+        [SerializeField] [Tooltip("Components To Enable After Level 1")]
         private List<Transform> _levelZeroDisabledComponents;
 
         private int _currentLevel;
