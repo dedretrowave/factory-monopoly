@@ -28,7 +28,8 @@ namespace Src.Buildings.Leveling
 
         private void Remove()
         {
-            Destroy(gameObject);
+            Debug.Log($"{_level.Id} : Level maxed");
+            gameObject.SetActive(false);
         }
 
         private void Upgrade()

@@ -16,6 +16,7 @@ namespace Src.Buildings.Leveling
         public UnityEvent OnMaxLevelReached;
 
         public int CurrentLevel => _currentLevel;
+        public int Id => _id;
 
         private void Start()
         {

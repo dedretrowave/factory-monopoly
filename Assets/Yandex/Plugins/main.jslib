@@ -11,4 +11,14 @@ mergeInto(LibraryManager.library, {
         myGameInstance.SendMessage("SaveSystem", "SetPlayerData", json);
     })
   },
+  
+  SubscribeForVisibilityChange: function() {
+    document.addEventListener("visibilitychange", function() {
+        myGameInstance.SendMessage("AudioOnUnfocusSwitcher", "OnVisibilityChange", document.visibilityState);
+    });
+    
+    if (document.visibilityState != "visible") {
+        myGameInstance.SendMessage("AudioOnUnfocusSwitcher", "OnVisibilityChange", document.visibilityState);
+    }
+  }
 });

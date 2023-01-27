@@ -39,8 +39,14 @@ namespace Src.Helpers
             EnableObjects();
         }
         
-        private void DisableObjects() => _objects.ForEach(instance => instance.SetActive(false));
+        private void DisableObjects() => _objects.ForEach(instance =>
+        {
+            instance.SetActive(false);
+        });
         
-        private void EnableObjects() => _objects.ForEach(instance => instance.SetActive(true));
+        private void EnableObjects() => _objects.ForEach(instance =>
+        {
+            instance.SetActive(true);
+        });
     }
 }
