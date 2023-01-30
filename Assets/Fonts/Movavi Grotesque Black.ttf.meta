@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: cb36c7bbb44d5694094bc1e77d6ff2b7
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Movavi Grotesque
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 2aae61fa7b42c5d45aeb1ae44f5d086b, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
