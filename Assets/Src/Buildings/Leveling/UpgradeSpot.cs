@@ -18,7 +18,7 @@ namespace Src.Buildings.Leveling
 
         public float CostOfUpgrade => _costOfUpgrade;
 
-        private void Start()
+        private void Awake()
         {
             _platform.OnPlace.AddListener(Upgrade);
             _level.OnMaxLevelReached.AddListener(Remove);
@@ -28,6 +28,7 @@ namespace Src.Buildings.Leveling
 
         private void Remove()
         {
+            Debug.Log($"{_level.Id} : Level maxed");
             Destroy(gameObject);
         }
 

@@ -19,7 +19,9 @@ namespace Src.Player
                     }
                     catch (Exception e)
                     {
-                        Debug.Log(e.Message);
+#if UNITY_EDITOR
+                        Debug.Log(e.Message);                  
+#endif
                     }
 
                     break;

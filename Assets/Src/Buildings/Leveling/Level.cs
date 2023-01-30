@@ -16,6 +16,7 @@ namespace Src.Buildings.Leveling
         public UnityEvent OnMaxLevelReached;
 
         public int CurrentLevel => _currentLevel;
+        public int Id => _id;
 
         private void Start()
         {
@@ -33,7 +34,11 @@ namespace Src.Buildings.Leveling
             
             int newLevel = _currentLevel + 1;
 
-            if (newLevel > _maxLevel) return;
+            if (newLevel > _maxLevel)
+            {
+                OnMaxLevelReached.Invoke();
+                return;
+            }
 
             if (newLevel == _maxLevel)
             {

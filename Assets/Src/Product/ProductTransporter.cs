@@ -81,7 +81,9 @@ namespace Src.Product
             }
             catch (Exception e)
             {
-                Debug.Log(e.Message);
+#if UNITY_EDITOR
+                Debug.Log(e.Message);          
+#endif
                 _products.Push(product);
             }
         }
