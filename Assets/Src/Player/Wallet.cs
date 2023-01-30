@@ -8,7 +8,7 @@ namespace Src.Player
     public class Wallet : MonoBehaviour
     {
         [SerializeField] private int _startingMoney;
-        private int _currentMoney = 0;
+        private int _currentMoney = -10;
 
         public int CurrentMoney
         {
@@ -26,7 +26,7 @@ namespace Src.Player
         {
             int moneyFromSave = SaveSystem.Instance.GetMoney();
 
-            if (moneyFromSave <= 0)
+            if (moneyFromSave < 0)
             {
                 _currentMoney = _startingMoney;
             }

@@ -33,7 +33,9 @@ namespace Src.Characters.Clients
                     }
                     catch (Exception e)
                     {
-                        Debug.Log(e.Message);
+#if UNITY_EDITOR
+                        Debug.Log(e.Message);                  
+#endif
                     }
                     break;
                 case PlatformType.Trash:

@@ -21,8 +21,10 @@ namespace Src.Helpers
 
         private void Remove()
         {
-            StopCoroutine(_fadeCoroutine);
-            enabled = false;
+            if (_fadeCoroutine != null)
+            {
+                StopCoroutine(_fadeCoroutine);
+            }
         }
 
         private void StartFade()
@@ -41,12 +43,18 @@ namespace Src.Helpers
         
         private void DisableObjects() => _objects.ForEach(instance =>
         {
-            instance.SetActive(false);
+            if (instance != null)
+            {
+                instance.SetActive(false);
+            }
         });
         
         private void EnableObjects() => _objects.ForEach(instance =>
         {
-            instance.SetActive(true);
+            if (instance != null)
+            {
+                instance.SetActive(true);
+            }
         });
     }
 }
