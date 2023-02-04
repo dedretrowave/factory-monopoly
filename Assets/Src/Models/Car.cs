@@ -1,43 +1,44 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace Src.Models
 {
-    public class Car : MonoBehaviour
+    [Serializable]
+    public class Car
     {
         public string Name;
         public Sprite ShopImage;
         public int Price;
         public Transform Prefab;
         
-        private bool _isPurchased;
-        private bool _isSelected;
+        private CarState _state;
 
-        public bool IsPurchased
+        public Car(Car car)
         {
-            get => _isPurchased;
+            Name = car.Name;
+            ShopImage = car.ShopImage;
+            Price = car.Price;
+            State = car.State;
+        }
+
+        public CarState State
+        {
+            get => _state;
             set
             {
-                if (!value) return;
-                
-                OnPurchased.Invoke(this);
-                _isPurchased = value;
+                _state = value;
+                OnStateChange.Invoke(this);
             }
         }
 
-        public bool IsSelected
-        {
-            get => _isSelected;
-            set
-            {
-                if (!value) return;
-                
-                OnSelected.Invoke(this);
-                _isSelected = value;
-            }
-        }
-
-        public UnityEvent<Car> OnPurchased;
-        public UnityEvent<Car> OnSelected;
+        public UnityEvent<Car> OnStateChange;
+    }
+    
+    public enum CarState
+    {
+        OnSale,
+        Purchased,
+        Selected,
     }
 }

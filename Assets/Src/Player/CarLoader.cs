@@ -10,7 +10,7 @@ namespace Src.Player
         public void LoadNew(Car _newCar)
         {
             Destroy(GetComponentInChildren<Transform>().gameObject);
-            _currentCar = Instantiate(_newCar, transform);
+            _currentCar = Instantiate(_newCar.Prefab, transform).GetComponent<Car>();
         }
     }
 }

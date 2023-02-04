@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 289521112544955930}
   - component: {fileID: 289521112544955928}
   - component: {fileID: 4411436042540412881}
+  - component: {fileID: 6691622379141664462}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -90,19 +91,27 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 289521111151826918}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1607957652400792926}
-        m_TargetAssemblyTypeName: Src.CarShop.Buttons.PurchaseButton, Assembly-CSharp
-        m_MethodName: Click
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+--- !u!114 &6691622379141664462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289521112544955931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c75a49efda8549dc8359d3dbd2a52516, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _listenerButton: {fileID: 4411436042540412881}
+  _buttonsWithStates:
+  - State: 0
+    Button: {fileID: 2986068447088137939, guid: 8ee052555b7723f4390a54b6ac7de282, type: 3}
+  - State: 1
+    Button: {fileID: 6517163310647575116, guid: 73961c7a94043804e973ccccf3ef18eb, type: 3}
+  - State: 2
+    Button: {fileID: 8746241311105784912, guid: caa1d7d6b39121b4e88767871d3649db, type: 3}
 --- !u!1001 &4548698955798066061
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -222,16 +231,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1607957652400792926 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2986068447088137939, guid: 8ee052555b7723f4390a54b6ac7de282, type: 3}
-  m_PrefabInstance: {fileID: 4548698955798066061}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ebb71d903734cfa8157c7636a871e8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

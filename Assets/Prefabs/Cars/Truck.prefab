@@ -124,7 +124,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3203782350147943681}
-  - component: {fileID: 8068302142936124514}
+  - component: {fileID: 5533928890828928854}
   m_Layer: 0
   m_Name: Truck
   m_TagString: Untagged
@@ -149,7 +149,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8068302142936124514
+--- !u!114 &5533928890828928854
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,12 +158,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3203782350147943680}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9488042fb5ab49ab9d612dcfb93193f1, type: 3}
+  m_Script: {fileID: 11500000, guid: c8f95ecbbfef46f5a2c06f2915ad66d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Truck
-  ShopImage: {fileID: 21300000, guid: bb7ac193189d48d4a846860360ffb2d8, type: 3}
-  Price: 2500
+  Data: {fileID: 11400000, guid: 4b0fe462c449f744a87cb2515f4aac18, type: 2}
+  OnStateChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3203782350570723274
 GameObject:
   m_ObjectHideFlags: 0

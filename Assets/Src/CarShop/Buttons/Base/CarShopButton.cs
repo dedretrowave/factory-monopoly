@@ -1,16 +1,21 @@
 using Src.Models;
+using Src.UI.CarShop;
 using UnityEngine;
 
 namespace Src.CarShop.Buttons.Base
 {
-    public class CarShopButton : MonoBehaviour
+    public abstract class CarShopButton : MonoBehaviour
     {
-        [SerializeField] protected Car car;
+        [SerializeField] private CarShopButtonUI _ui;
+        
+        protected Car Car;
 
-        public void SetCar(Car car)
+        public void SetUp(Car car)
         {
-            this.car = car;
-            Debug.Log("CAR IS DELIVERED: " + this.car);
+            Car = new Car(car);
+            _ui.Fill(Car);
         }
+
+        public abstract void Click();
     }
 }

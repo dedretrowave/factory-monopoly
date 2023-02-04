@@ -7340,10 +7340,10 @@ MonoBehaviour:
   _loader: {fileID: 6755293972816308562}
   _wallet: {fileID: 252002403}
   _cars:
-  - {fileID: 1610705026064841414, guid: f2a61b5f8c49e9244aab2be984338d2f, type: 3}
-  - {fileID: 8068302142936124514, guid: e86668d4d5c3c714ebf3e4c9cb875549, type: 3}
-  - {fileID: 8258366726176093806, guid: 0e9dfe1a23966534db62cedfdd4dbc53, type: 3}
-  _carSlot: {fileID: 1563935548992277463, guid: f7a1bcd2ca65e5d47963f079770b1a9b, type: 3}
+  - {fileID: 874119217385728350, guid: f2a61b5f8c49e9244aab2be984338d2f, type: 3}
+  - {fileID: 5533928890828928854, guid: e86668d4d5c3c714ebf3e4c9cb875549, type: 3}
+  - {fileID: 7931029552241992088, guid: 0e9dfe1a23966534db62cedfdd4dbc53, type: 3}
+  _carSlot: {fileID: 7674067670015637469, guid: f7a1bcd2ca65e5d47963f079770b1a9b, type: 3}
 --- !u!114 &1630975084 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6489311805688607921, guid: 80e92ca7968395c489ab8736a4f2e05f, type: 3}

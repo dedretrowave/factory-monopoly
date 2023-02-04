@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Src.Models;
 using Src.Player;
@@ -21,15 +22,41 @@ namespace Src.CarShop
                 Instantiate(_carSlot, transform);
                 _carSlot.Fill(car);
                 
-                car.OnPurchased.AddListener(CompletePurchase);
-                car.OnSelected.AddListener(CompleteSelect);
+                car.OnStateChange.AddListener(CompleteCarStateTransition);
             });
+        }
+
+        private void CompleteCarStateTransition(Car car)
+        {
+            switch (car.State)
+            {
+                case CarState.OnSale:
+                    break;
+                case CarState.Purchased:
+                    CompletePurchase(car);
+                    break;
+                case CarState.Selected:
+                    // CompleteSelect(car);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+            
+            _carSlot.Fill(car);
         }
 
         private void CompletePurchase(Car car)
         {
-            _wallet.Reduce(car.Price);
-            //TODO: SAVE CAR PURCHASE
+            try
+            {
+                _wallet.Reduce(car.Price);
+            }
+            catch (Exception e)
+            {
+                Debug.Log(e.Message);
+                car.State = CarState.OnSale;
+                throw;
+            }
         }
 
         private void CompleteSelect(Car car)
