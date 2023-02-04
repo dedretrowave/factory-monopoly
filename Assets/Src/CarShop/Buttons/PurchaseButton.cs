@@ -1,15 +1,29 @@
+using DI;
 using Src.CarShop.Buttons.Base;
 using Src.Models;
+using Src.UI.CarShop;
 using UnityEngine;
 
 namespace Src.CarShop.Buttons
 {
-    public class PurchaseButton : CarShopButton
+    public class PurchaseButton : MonoBehaviour
     {
-        public override void Click()
+        [SerializeField] private CarShopButtonUI _ui;
+
+        protected int CarId = 2;
+
+        public void SetUp(Car car)
         {
-            Debug.Log($"{Car.Name} PURCHASED");
-            Car.State = CarState.Purchased;
+            CarId = car.Id;
+            _ui.Fill(car);
+        }
+        
+        public void Click()
+        {
+            Debug.Log($"PURCHASING CAR {CarId}");
+            CarStateSwitcher carStateSwitcher = DependencyContext.Dependencies.Get<CarStateSwitcher>();
+            
+            carStateSwitcher.SwitchToPurchased(CarId);
         }
     }
 }

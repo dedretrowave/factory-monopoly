@@ -189,11 +189,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buttonsWithStates:
   - State: 0
-    Button: {fileID: 5904515862729869680}
+    Button: {fileID: 0}
   - State: 1
-    Button: {fileID: 5000598437894457753}
+    Button: {fileID: 0}
   - State: 2
-    Button: {fileID: 7098272383126205547}
+    Button: {fileID: 0}
 --- !u!1 &1850030477162562419
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,7 +298,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 5a186cbf5817adc42a45bb7b69cb8cd4, type: 3}
+  m_Texture: {fileID: 2800000, guid: e6aa5106e66d73b44a2f42147baf243f, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -388,8 +388,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2361690842292685543}
   - component: {fileID: 3403956840593234922}
-  - component: {fileID: 7098272383126205547}
   - component: {fileID: 911931086979520866}
+  - component: {fileID: 5747580959846184616}
   m_Layer: 5
   m_Name: SelectedButton
   m_TagString: Untagged
@@ -462,20 +462,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2361690841767709776}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
---- !u!114 &7098272383126205547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2361690842292685540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bcfd40ff9bd4fcf8850b2f277c15dc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _ui: {fileID: 911931086979520866}
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Src.CarShop.Buttons.SelectButton, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &911931086979520866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,7 +487,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d7ecacdd43648498d095b4e2e93a8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _price: {fileID: 2361690842613018954}
+  _price: {fileID: 0}
+--- !u!114 &5747580959846184616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2361690842292685540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ebb71d903734cfa8157c7636a871e8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ui: {fileID: 911931086979520866}
 --- !u!1 &2361690842613018952
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,7 +513,7 @@ GameObject:
   - component: {fileID: 2361690842613018949}
   - component: {fileID: 2361690842613018954}
   m_Layer: 5
-  m_Name: Price
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -555,7 +567,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1000
+  m_text: Selected
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1628f0f285d6d6346bb71e211a43d1e7, type: 2}
   m_sharedMaterial: {fileID: -8512724546423032435, guid: 1628f0f285d6d6346bb71e211a43d1e7, type: 2}
@@ -780,8 +792,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2607725178260711689}
   - component: {fileID: 6737966064624111321}
-  - component: {fileID: 5000598437894457753}
   - component: {fileID: 9149379669959284168}
+  - component: {fileID: 7003382669719990097}
   m_Layer: 5
   m_Name: PurchasedButton
   m_TagString: Untagged
@@ -855,7 +867,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5000598437894457753}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Src.CarShop.Buttons.SelectButton, Assembly-CSharp
         m_MethodName: Click
         m_Mode: 1
@@ -867,19 +879,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5000598437894457753
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2607725178260711690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bcfd40ff9bd4fcf8850b2f277c15dc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _ui: {fileID: 911931086979520866}
 --- !u!114 &9149379669959284168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -893,6 +892,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _price: {fileID: 0}
+--- !u!114 &7003382669719990097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2607725178260711690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ebb71d903734cfa8157c7636a871e8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ui: {fileID: 9149379669959284168}
 --- !u!1 &4874307639668109795
 GameObject:
   m_ObjectHideFlags: 0
@@ -1049,7 +1061,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4874307641008455039}
   - component: {fileID: 8177441594258625559}
-  - component: {fileID: 5904515862729869680}
   - component: {fileID: 4957317102564724803}
   m_Layer: 5
   m_Name: PurchaseButton
@@ -1057,7 +1068,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4874307641008455039
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1100,7 +1111,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1125,7 +1136,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5904515862729869680}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Src.CarShop.Buttons.PurchaseButton, Assembly-CSharp
         m_MethodName: Click
         m_Mode: 1
@@ -1137,19 +1148,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5904515862729869680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4874307641008455036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ebb71d903734cfa8157c7636a871e8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _ui: {fileID: 4957317102564724803}
 --- !u!114 &4957317102564724803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1229,7 +1227,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 5000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1628f0f285d6d6346bb71e211a43d1e7, type: 2}
   m_sharedMaterial: {fileID: -8512724546423032435, guid: 1628f0f285d6d6346bb71e211a43d1e7, type: 2}

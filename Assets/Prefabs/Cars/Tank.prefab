@@ -129,7 +129,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8f95ecbbfef46f5a2c06f2915ad66d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Data: {fileID: 11400000, guid: e4673ff3c10d26241940382c384e142d, type: 2}
+  Id: 3
+  ShopImage: {fileID: 21300000, guid: e6aa5106e66d73b44a2f42147baf243f, type: 3}
+  Price: 5000
   OnStateChange:
     m_PersistentCalls:
       m_Calls: []

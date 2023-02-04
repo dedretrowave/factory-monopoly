@@ -11,6 +11,7 @@ namespace Src.UI.CarShop
         public void Fill(Car car)
         {
             if (_price == null) return;
+            
             _price.text = car.Price.ToString();
         }
     }

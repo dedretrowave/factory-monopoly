@@ -1,26 +1,15 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace Src.Models
 {
-    [Serializable]
-    public class Car
+    public class Car : MonoBehaviour
     {
-        public string Name;
+        public int Id;
         public Sprite ShopImage;
         public int Price;
-        public Transform Prefab;
         
         private CarState _state;
-
-        public Car(Car car)
-        {
-            Name = car.Name;
-            ShopImage = car.ShopImage;
-            Price = car.Price;
-            State = car.State;
-        }
 
         public CarState State
         {

@@ -1,5 +1,6 @@
+using DI;
 using Src.CarShop.Buttons.Base;
-using Src.Models;
+using UnityEngine;
 
 namespace Src.CarShop.Buttons
 {
@@ -7,7 +8,10 @@ namespace Src.CarShop.Buttons
     {
         public override void Click()
         {
-            Car.State = CarState.Selected;
+            Debug.Log($"SELECTING CAR {CarId}");
+            CarStateSwitcher carStateSwitcher = DependencyContext.Dependencies.Get<CarStateSwitcher>();
+            
+            carStateSwitcher.SwitchToSelected(CarId);
         }
     }
 }
