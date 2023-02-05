@@ -24,7 +24,7 @@ namespace Src.CarShop
             {
                 _wallet.Reduce(car.Price);
                 car.State = CarState.Purchased;
-                Debug.Log($"PURCHASED CAR: {car.Id}");
+                _shop.Load();
             }
             catch (Exception e)
             {
@@ -36,8 +36,8 @@ namespace Src.CarShop
         public void Select(Car car)
         {
             _loader.LoadNew(car);
-            car.State = CarState.Selected;
-            Debug.Log($"SELECTED CAR: {car.Id}");
+            _shop.MarkSelected(car);
+            _shop.Load();
         }
     }
 }
