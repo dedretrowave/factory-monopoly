@@ -26,7 +26,7 @@ namespace Src.Player
         private void Start()
         {
             DependencyContext.Dependencies.Add(new Dependency( typeof(Wallet), () => this));
-            
+
             int moneyFromSave = SaveSystem.Instance.GetMoney();
 
             if (moneyFromSave < 0)
