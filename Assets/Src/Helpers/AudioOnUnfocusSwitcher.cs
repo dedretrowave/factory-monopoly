@@ -13,7 +13,9 @@ namespace Src.Helpers
 
         private void Start()
         {
-            SubscribeForVisibilityChange();
+#if !UNITY_EDITOR
+            SubscribeForVisibilityChange();      
+#endif
         }
 
         private void OnVisibilityChange(string visibilityState)

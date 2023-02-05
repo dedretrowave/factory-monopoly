@@ -1,4 +1,3 @@
-using Src.CarShop.Buttons.Base;
 using Src.Models;
 using TMPro;
 using UnityEngine;
@@ -10,13 +9,13 @@ namespace Src.UI.CarShop
     {
         [SerializeField] private RawImage _carImage;
         [SerializeField] private TextMeshProUGUI _price;
-        [SerializeField] private CarShopButton _button;
+        [SerializeField] private CarShopButtonRenderer _renderer;
 
         public void Fill(Car car)
         {
             _carImage.texture = car.ShopImage.texture;
             _price.text = car.Price.ToString();
-            _button.SetCar(car);
+            _renderer.SetCar(car);
         }
     }
 }

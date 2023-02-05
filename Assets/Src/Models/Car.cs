@@ -3,41 +3,33 @@ using UnityEngine.Events;
 
 namespace Src.Models
 {
-    public class Car : MonoBehaviour
+    [CreateAssetMenu(fileName = "Car", menuName = "Car", order = 0)]
+    public class Car : ScriptableObject
     {
-        public string Name;
+        public int Id;
         public Sprite ShopImage;
         public int Price;
         public Transform Prefab;
-        
-        private bool _isPurchased;
-        private bool _isSelected;
 
-        public bool IsPurchased
+        [SerializeField] private CarState _state = CarState.OnSale;
+
+        public CarState State
         {
-            get => _isPurchased;
+            get => _state;
             set
             {
-                if (!value) return;
-                
-                OnPurchased.Invoke(this);
-                _isPurchased = value;
+                OnStateChange.Invoke(this);
+                _state = value;
             }
         }
 
-        public bool IsSelected
-        {
-            get => _isSelected;
-            set
-            {
-                if (!value) return;
-                
-                OnSelected.Invoke(this);
-                _isSelected = value;
-            }
-        }
+        public UnityEvent<Car> OnStateChange;
+    }
 
-        public UnityEvent<Car> OnPurchased;
-        public UnityEvent<Car> OnSelected;
+    public enum CarState
+    {
+        OnSale,
+        Purchased,
+        Selected
     }
 }

@@ -7134,7 +7134,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1622703385}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7143,7 +7143,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 24.5, y: 0}
+  m_AnchoredPosition: {x: 120, y: 0}
   m_SizeDelta: {x: 128, y: 128}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1622703388
@@ -7271,6 +7271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1622710075}
   - component: {fileID: 1622710076}
+  - component: {fileID: 1622710078}
   - component: {fileID: 1622710077}
   m_Layer: 5
   m_Name: Cars
@@ -7337,13 +7338,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 286e444da25c48338c7eb23b99a07e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _loader: {fileID: 6755293972816308562}
-  _wallet: {fileID: 252002403}
   _cars:
-  - {fileID: 1610705026064841414, guid: f2a61b5f8c49e9244aab2be984338d2f, type: 3}
-  - {fileID: 8068302142936124514, guid: e86668d4d5c3c714ebf3e4c9cb875549, type: 3}
-  - {fileID: 8258366726176093806, guid: 0e9dfe1a23966534db62cedfdd4dbc53, type: 3}
-  _carSlot: {fileID: 1563935548992277463, guid: f7a1bcd2ca65e5d47963f079770b1a9b, type: 3}
+  - {fileID: 11400000, guid: 5ff520960949852408f27c861c611f8c, type: 2}
+  - {fileID: 11400000, guid: 421d5f17d86a0364292fac8ce9cb0b34, type: 2}
+  - {fileID: 11400000, guid: d8b20da0148968a42a544ba98f7518df, type: 2}
+  - {fileID: 11400000, guid: 7f8ab725fc611c444ad1b3566e781602, type: 2}
+  _carSlot: {fileID: 5242251488237202473, guid: 27ce7a4b028b3fd429cc3def2875fa86, type: 3}
+--- !u!114 &1622710078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622710074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 625ea7262cea47ce871c470d3b29dff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wallet: {fileID: 252002403}
+  _loader: {fileID: 6755293972816308562}
+  _shop: {fileID: 1622710077}
 --- !u!114 &1630975084 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6489311805688607921, guid: 80e92ca7968395c489ab8736a4f2e05f, type: 3}
@@ -7450,7 +7465,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 69.66998, y: -70.51996}
+  m_AnchoredPosition: {x: 69.66992, y: -70.51996}
   m_SizeDelta: {x: 401.5, y: 50}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1667884299
