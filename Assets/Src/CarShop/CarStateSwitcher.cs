@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using DI;
 using Src.Models;
 using Src.Player;
@@ -11,6 +12,8 @@ namespace Src.CarShop
         [SerializeField] private Wallet _wallet;
         [SerializeField] private CarLoader _loader;
         [SerializeField] private CarShop _shop;
+
+        private Car _usedCar;
         
         private void Start()
         {
@@ -38,6 +41,21 @@ namespace Src.CarShop
             _loader.LoadNew(car);
             _shop.MarkSelected(car);
             _shop.Load();
+        }
+
+        public void SwitchForTime(Car car, int duration)
+        {
+            StartCoroutine(GetForTime(car, duration));
+        }
+
+        private IEnumerator GetForTime(Car car, int duration)
+        {
+            _usedCar = _loader.CurrentCar;
+            _loader.LoadNew(car);
+
+            yield return new WaitForSeconds(duration);
+
+            _loader.LoadNew(_usedCar);
         }
     }
 }

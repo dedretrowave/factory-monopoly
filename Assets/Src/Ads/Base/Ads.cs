@@ -1,26 +1,30 @@
 using System.Collections;
+using DI;
 using Src.Helpers;
 using UnityEngine;
 
-namespace Src.Ads
+namespace Src.Ads.Base
 {
-    public class Ads : MonoBehaviour
+    public abstract class Ads : MonoBehaviour
     {
-        [SerializeField] private float _timeSpan = 180f;
-        [SerializeField] private GamePauser _pauser;
+        [SerializeField] protected float _timeSpan = 180f;
 
         private void Start()
         {
             StartCoroutine(ShowAdAfterTimeout());
+            
+            DependencyContext.Dependencies.Add(new Dependency(typeof(Ads), () => this));
         }
 
         private IEnumerator ShowAdAfterTimeout()
         {
             yield return new WaitForSeconds(_timeSpan);
             
-            GameDistribution.Instance.ShowAd();
+            ShowAd();
 
             yield return ShowAdAfterTimeout();
         }
+
+        public abstract void ShowAd();
     }
 }

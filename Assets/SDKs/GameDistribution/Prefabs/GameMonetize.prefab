@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4987651733047190}
   - component: {fileID: 114328923287309288}
-  - component: {fileID: 2855461790784114843}
+  - component: {fileID: 8561938968205528840}
   m_Layer: 0
-  m_Name: GameDistribution
+  m_Name: GameMonetize
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,11 +42,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1134998061469316}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1131192e25fdb2749a231294f114a8ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 9bb02a53e0d69aa4cbb148c84621f7f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GAME_KEY: acd318d8bdfb4fa391e9c8c4a9bab498
---- !u!114 &2855461790784114843
+  GAME_ID: zl9iep4h9aqjhe5j9arvfcqv3af79pyf
+--- !u!114 &8561938968205528840
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55,7 +55,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1134998061469316}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c1a51f1ecdc4b959596f09b9d625da5, type: 3}
+  m_Script: {fileID: 11500000, guid: e50075701e5448328386a57be0469c48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _timeSpan: 10

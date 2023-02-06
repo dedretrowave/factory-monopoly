@@ -1,4 +1,5 @@
 using System;
+using DI;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -6,24 +7,24 @@ namespace Src.Helpers
 {
     public class GamePauser : MonoBehaviour
     {
-        private static GamePauser _instance;
-
-        public static GamePauser Instance => _instance;
-
         public UnityEvent OnGamePaused;
         public UnityEvent OnGameResumed;
 
         private void Start()
         {
-            _instance = this;
+            DependencyContext.Dependencies.Add(new Dependency(typeof(GamePauser), () => this));
             GameDistribution.OnResumeGame += Resume;
+            GameMonetize.OnResumeGame += Resume;
             GameDistribution.OnPauseGame += Pause;
+            GameMonetize.OnPauseGame += Pause;
         }
 
-        private void OnDisable()
+        private void OnDestroy()
         {
             GameDistribution.OnResumeGame -= Resume;
             GameDistribution.OnPauseGame -= Pause;
+            GameDistribution.OnPauseGame -= Pause;
+            GameMonetize.OnPauseGame -= Pause;
         }
 
         public void Pause()

@@ -9,12 +9,14 @@ namespace Src.UI.CarShop
     {
         [SerializeField] private RawImage _carImage;
         [SerializeField] private TextMeshProUGUI _price;
+        [SerializeField] private AdButton _adButton;
         [SerializeField] private CarShopButtonRenderer _renderer;
 
         public void Fill(Car car)
         {
             _carImage.texture = car.ShopImage.texture;
             _price.text = car.Price.ToString();
+            _adButton.SetCar(car);
             _renderer.SetCar(car);
         }
     }

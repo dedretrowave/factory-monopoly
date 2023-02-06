@@ -1,5 +1,4 @@
 using Src.Models;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Src.Player
@@ -8,6 +7,8 @@ namespace Src.Player
     {
         [SerializeField] private Transform _currentCarTransform;
         private Car _currentCar;
+
+        public Car CurrentCar => _currentCar;
 
         public void LoadNew(Car newCar)
         {

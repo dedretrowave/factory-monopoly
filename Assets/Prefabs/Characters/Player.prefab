@@ -61,6 +61,8 @@ GameObject:
   - component: {fileID: 6616234013178782259}
   - component: {fileID: 4866894907796650452}
   - component: {fileID: 3344604190460489386}
+  - component: {fileID: 6698564614799816473}
+  - component: {fileID: 2796594938311728903}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -261,6 +263,35 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6698564614799816473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6755293971755089964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 879efe0cbcbb42cab8424259f2053c1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _loader: {fileID: 4485808657185579796}
+  _shop: {fileID: 0}
+--- !u!114 &2796594938311728903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6755293971755089964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 625ea7262cea47ce871c470d3b29dff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wallet: {fileID: 6755293972408371851}
+  _loader: {fileID: 4485808657185579796}
+  _shop: {fileID: 0}
 --- !u!1 &6755293972408371848
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,7 +359,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 813606e297614695a8c4a83b488c2de6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startingMoney: 70
   OnMoneyChange:
     m_PersistentCalls:
       m_Calls: []
