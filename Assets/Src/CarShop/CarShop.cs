@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using Src.Models;
-using Src.Player;
 using Src.UI.CarShop;
 using UnityEngine;
 
@@ -8,33 +7,51 @@ namespace Src.CarShop
 {
     public class CarShop : MonoBehaviour
     {
-        [SerializeField] private CarLoader _loader;
-        [SerializeField] private Wallet _wallet;
-        
         [SerializeField] private List<Car> _cars;
         [SerializeField] private CarSlotUI _carSlot;
 
-        private void Start()
+        public void MarkSelected(Car selectedCar)
         {
             _cars.ForEach(car =>
             {
-                Instantiate(_carSlot, transform);
-                _carSlot.Fill(car);
+                if (car.State == CarState.Selected)
+                {
+                    car.State = CarState.Purchased;
+                }
                 
-                car.OnPurchased.AddListener(CompletePurchase);
-                car.OnSelected.AddListener(CompleteSelect);
+                if (car.Id == selectedCar.Id && selectedCar.State == CarState.Purchased)
+                {
+                    car.State = CarState.Selected;
+                }
             });
         }
 
-        private void CompletePurchase(Car car)
+        public void Load()
         {
-            _wallet.Reduce(car.Price);
-            //TODO: SAVE CAR PURCHASE
+            Clean();
+            
+            Debug.Log("LOADING");
+            
+            _cars.ForEach(car =>
+            {
+                Debug.Log($"LOADED: CAR {car.Id}: {car.State}");
+                CarSlotUI newCarSlot = Instantiate(_carSlot, transform);
+                newCarSlot.Fill(car);
+            });
+            
+            Debug.Log("LOADED");
         }
 
-        private void CompleteSelect(Car car)
+        private void Clean()
         {
-            _loader.LoadNew(car);
+            Debug.Log("DESTROYING");
+            foreach (Transform child in transform)
+            {
+                Debug.Log($"{child.name}");
+                Destroy(child.gameObject);
+            }
+            
+            Debug.Log("DESTROYED");
         }
     }
 }

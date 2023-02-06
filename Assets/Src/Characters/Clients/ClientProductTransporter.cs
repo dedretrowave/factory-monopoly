@@ -34,7 +34,7 @@ namespace Src.Characters.Clients
                     catch (Exception e)
                     {
 #if UNITY_EDITOR
-                        Debug.Log(e.Message);                  
+                        // Debug.Log(e.Message);
 #endif
                     }
                     break;

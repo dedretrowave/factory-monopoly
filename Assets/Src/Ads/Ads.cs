@@ -1,12 +1,13 @@
 using System.Collections;
+using Src.Helpers;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Src.Ads
 {
     public class Ads : MonoBehaviour
     {
-        [SerializeField] private float _timeSpan = 120f;
+        [SerializeField] private float _timeSpan = 180f;
+        [SerializeField] private GamePauser _pauser;
 
         private void Start()
         {

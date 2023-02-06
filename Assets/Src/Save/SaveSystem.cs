@@ -41,15 +41,21 @@ namespace Src.Save
         {
             _instance = this;
 #if !UNITY_EDITOR && UNITY_WEBGL
-Debug.Log("NOT UNITY");
             LoadExtern();      
 #else
             LoadInternal();
 #endif
         }
 
+        public bool GetIsStartingCollected()
+        {
+            return _data.IsStartingMoneyCollected;
+        }
+
         public void SaveMoney(int amount)
         {
+            _data.IsStartingMoneyCollected = true;
+            
             if (amount >= 0)
             {
                 _data.AddMoney(amount);

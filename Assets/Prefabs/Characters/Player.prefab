@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17582bcf99314cb496500dcf7cc50e60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _currentCarTransform: {fileID: 1909714322042132971}
 --- !u!1 &6755293971755089964
 GameObject:
   m_ObjectHideFlags: 0

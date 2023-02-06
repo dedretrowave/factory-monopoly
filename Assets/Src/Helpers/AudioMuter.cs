@@ -5,15 +5,20 @@ using UnityEngine;
 
 namespace Src.Helpers
 {
-    public class AudioOnUnfocusSwitcher : MonoBehaviour
+    public class AudioMuter : MonoBehaviour
     {
         [DllImport("__Internal")] private static extern void SubscribeForVisibilityChange();
         
         [SerializeField] private List<AudioSource> _audios;
+        [SerializeField] private GamePauser _pauser;
 
-        private void Start()
+        private void Awake()
         {
-            SubscribeForVisibilityChange();
+#if !UNITY_EDITOR
+            SubscribeForVisibilityChange();      
+#endif
+            _pauser.OnGamePaused.AddListener(Disable);
+            _pauser.OnGameResumed.AddListener(Enable);
         }
 
         private void OnVisibilityChange(string visibilityState)
@@ -29,6 +34,16 @@ namespace Src.Helpers
         private void OnApplicationPause(bool pauseStatus)
         {
             Switch(!pauseStatus);
+        }
+
+        private void Disable()
+        {
+            Switch(true);
+        }
+
+        private void Enable()
+        {
+            Switch(false);
         }
 
         private void Switch(bool value)
