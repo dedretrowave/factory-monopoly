@@ -43,7 +43,7 @@ namespace Src.Buildings.Platforms
 
         public Product.Product Get()
         {
-            var place = _places.Find(place => place.IsOccupied);
+            var place = _places.FindLast(place => place.IsOccupied);
 
             if (place == null) return null;
 

@@ -8,8 +8,7 @@ namespace Src.Player
 {
     public class Wallet : MonoBehaviour
     {
-        [SerializeField] private int _startingMoney;
-        private int _currentMoney = -10;
+        private int _currentMoney;
 
         public int CurrentMoney
         {
@@ -28,15 +27,8 @@ namespace Src.Player
             DependencyContext.Dependencies.Add(new Dependency( typeof(Wallet), () => this));
 
             int moneyFromSave = SaveSystem.Instance.GetMoney();
-
-            if (moneyFromSave < 0)
-            {
-                _currentMoney = _startingMoney;
-            }
-            else
-            {
-                _currentMoney = moneyFromSave;
-            }
+            
+            _currentMoney = moneyFromSave;
             
             OnMoneyChange.Invoke(CurrentMoney);
         }

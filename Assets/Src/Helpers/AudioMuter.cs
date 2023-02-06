@@ -17,7 +17,6 @@ namespace Src.Helpers
 #if !UNITY_EDITOR
             SubscribeForVisibilityChange();      
 #endif
-            
             _pauser.OnGamePaused.AddListener(Disable);
             _pauser.OnGameResumed.AddListener(Enable);
         }

@@ -20,6 +20,7 @@ namespace Src.Save
     {
         public int Money = -1;
         public readonly List<BuildingLevel> BuildingsLevels = new();
+        public bool IsStartingMoneyCollected = false;
 
         public void AddMoney(int amount)
         {
