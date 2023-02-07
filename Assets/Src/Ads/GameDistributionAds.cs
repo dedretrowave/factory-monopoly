@@ -2,8 +2,10 @@ namespace Src.Ads
 {
     public class GameDistributionAds : Base.Ads
     {
-        private void Start()
+        private new void Start()
         {
+            base.Start();
+            
             GameDistribution.OnRewardedVideoSuccess += InvokeRewardedGameWatched;
             GameDistribution.OnRewardedVideoFailure += InvokeRewardedGameSkipped;
         }

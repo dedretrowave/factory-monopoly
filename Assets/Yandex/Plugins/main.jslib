@@ -1,24 +1,20 @@
 mergeInto(LibraryManager.library, {
   SaveExtern: function(data) {
     // var dataString = UTF8ToString(data);
-    // var playerData = JSON.parse(dataString);
-    // player.setData(playerData);
+    // localStorage.setItem('player', dataString);
   },
   
   LoadExtern: function() {
-    // player.getData().then(_data => {
-    //     const json = JSON.stringify(_data);
-    //     myGameInstance.SendMessage("SaveSystem", "SetPlayerData", json);
-    // })
+    // SendMessage("SaveSystem", "SetPlayerData", localStorage.getItem('player') || '');
   },
   
   SubscribeForVisibilityChange: function() {
-    // document.addEventListener("visibilitychange", function() {
-    //     myGameInstance.SendMessage("AudioOnUnfocusSwitcher", "OnVisibilityChange", document.visibilityState);
-    // });
+    document.addEventListener("visibilitychange", function() {
+      SendMessage("AudioOnUnfocusSwitcher", "OnVisibilityChange", document.visibilityState);
+    });
     
-    // if (document.visibilityState != "visible") {
-    //     myGameInstance.SendMessage("AudioOnUnfocusSwitcher", "OnVisibilityChange", document.visibilityState);
-    // }
+    if (document.visibilityState != "visible") {
+      SendMessage("AudioOnUnfocusSwitcher", "OnVisibilityChange", document.visibilityState);
+    }
   }
 });

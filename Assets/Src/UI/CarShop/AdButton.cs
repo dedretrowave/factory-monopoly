@@ -17,8 +17,6 @@ namespace Src.UI.CarShop
         {
             _carStateSwitcher = DependencyContext.Dependencies.Get<CarStateSwitcher>();
             _ads = DependencyContext.Dependencies.Get<Ads.Base.Ads>();
-            
-            _ads.OnRewardedAdWatched.AddListener(GiveBonus);
         }
 
         public void SetCar(Car car)
@@ -28,12 +26,14 @@ namespace Src.UI.CarShop
 
         public void LaunchAd()
         {
+            _ads.OnRewardedAdWatched.AddListener(GiveBonus);
             _ads.ShowRewardedAd();
         }
 
         private void GiveBonus()
         {
             _carStateSwitcher.SwitchForTime(_car, _usageDuration);
+            _ads.OnRewardedAdWatched.RemoveListener(GiveBonus);
         }
     }
 }

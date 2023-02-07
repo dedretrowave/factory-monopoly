@@ -8,7 +8,7 @@ namespace Src.Player
 {
     public class Wallet : MonoBehaviour
     {
-        private int _currentMoney;
+        private int _currentMoney = 0;
 
         public int CurrentMoney
         {
@@ -27,6 +27,8 @@ namespace Src.Player
             DependencyContext.Dependencies.Add(new Dependency( typeof(Wallet), () => this));
 
             int moneyFromSave = SaveSystem.Instance.GetMoney();
+
+            moneyFromSave = moneyFromSave < 0 ? 0 : moneyFromSave;
             
             _currentMoney = moneyFromSave;
             

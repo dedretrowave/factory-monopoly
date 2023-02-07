@@ -10,6 +10,7 @@ namespace Src.Ads
         public override void ShowRewardedAd()
         {
             GameMonetize.Instance.ShowAd();
+            InvokeRewardedGameWatched();
         }
     }
 }

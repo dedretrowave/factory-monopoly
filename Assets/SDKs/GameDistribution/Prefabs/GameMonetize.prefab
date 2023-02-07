@@ -58,4 +58,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e50075701e5448328386a57be0469c48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeSpan: 10
+  _timeSpan: 180
+  OnRewardedAdWatched:
+    m_PersistentCalls:
+      m_Calls: []
+  OnRewardedAdSkipped:
+    m_PersistentCalls:
+      m_Calls: []

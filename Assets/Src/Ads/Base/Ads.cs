@@ -13,7 +13,7 @@ namespace Src.Ads.Base
         public UnityEvent OnRewardedAdWatched;
         public UnityEvent OnRewardedAdSkipped;
 
-        private void Start()
+        protected void Start()
         {
             StartCoroutine(ShowAdAfterTimeout());
             
