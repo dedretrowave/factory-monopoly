@@ -1,11 +1,11 @@
 mergeInto(LibraryManager.library, {
   SaveExtern: function(data) {
-    // var dataString = UTF8ToString(data);
-    // localStorage.setItem('player', dataString);
+    var dataString = UTF8ToString(data);
+    localStorage.setItem('player', dataString);
   },
   
   LoadExtern: function() {
-    // SendMessage("SaveSystem", "SetPlayerData", localStorage.getItem('player') || '');
+    SendMessage("SaveSystem", "SetPlayerData", localStorage.getItem('player') || '');
   },
   
   SubscribeForVisibilityChange: function() {
